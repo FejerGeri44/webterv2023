@@ -9,9 +9,9 @@
 <body>
 <div class="navbar">
     <ul>
-        <li><a class="active" href="Quiz.php">Quiz</a></li>
-        <li><a href="Filmertekelo.php">Filmek</a></li>
-        <li><a href="Chat.php">Chat</a></li>
+        <li><a class="active" href="index.php?view=Quiz">Quiz</a></li>
+        <li><a href="index.php?view=Filmertekelo">Filmek</a></li>
+        <li><a href="index.php?view=Chat">Chat</a></li>
     </ul>
 </div>
 <div class="container"><br>

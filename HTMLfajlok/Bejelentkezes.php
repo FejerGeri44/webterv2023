@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <div class="title">Bejelentkezés</div>
-    <form action="index.php?post=Bejelentkezes" method="post">
+    <form action="index.php?post=Profil" method="post">
         <div class="user-details">
             <div class="input-box">
                 <label for="username-label">Felhasználónév<span class="required">*</span>:</label>
