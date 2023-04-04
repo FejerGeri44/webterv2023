@@ -1,0 +1,160 @@
+body {
+    background-color: #1D1F20;
+    color: #EFEFFF;
+}
+.container{
+    width: 100%;
+    text-align: center;
+}
+.title{
+    font-family: 'sans-serif';
+    font-size: 50px;
+    text-align: center;
+    padding: 0;
+    margin-left: 50%;
+    transform: translateX(-200%);
+    opacity: 0;
+    animation: slide-in-anim 1.5s ease-out forwards;
+    text-shadow: 3px 2px 4px #9a9999;
+}
+.text{
+    font-family: 'sans-serif';
+    font-size: 25px;
+    text-align: center;
+    animation: slide-in-anim 2.0s ease-out forwards;
+}
+.text1{
+    font-family: 'sans-serif';
+    font-size: 25px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-right: 100%;
+    transform: translateX(-200%);
+    opacity: 0;
+    animation: slide-in-anim 2.0s ease-out forwards;
+}
+
+.kozepre{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    font-family: 'sans-serif';
+    font-size: 20px;
+    text-align: center;
+    transform: translateX(200%);
+    opacity: 0;
+    animation: slide-in-anim 1.6s ease-out forwards;
+    letter-spacing: 1px;
+}
+.listaelem{
+    font-family: 'sans-serif';
+    font-size: 25px;
+    text-align: left;
+    padding: 0;
+    margin-left: 50%;
+    margin-bottom: 2%;
+    animation: slide-in-anim 1.6s ease-out forwards;
+    transform: translateX(-200%);
+}
+.list{
+    font-family: 'sans-serif';
+    font-size: 25px;
+    text-align: left;
+    padding: 0;
+    margin-left: 48%;
+    transform: translateX(-200%);
+    opacity: 0;
+    animation: slide-in-anim 1.6s ease-out forwards;
+}
+.kozep{
+    text-align: center;
+}
+.balra{
+    text-align: left;
+    padding: 8px;
+    text-decoration: underline red;
+}
+.jobbra{
+    text-align: right;
+    padding: 8px;
+}
+.nev{
+    font-size: 30px;
+}
+.ido{
+    font-size: 25px;
+}
+span{
+    font-family: 'sans-serif';
+    color: red;
+}
+.oldalszam{
+    font-family: 'sans-serif';
+    font-size: 25px;
+    text-align: center;
+}
+figure.kep{
+    max-width: 100px;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    list-style: none;
+    position: fixed;
+    margin-top: -10px;
+    width: 100%;
+    z-index:100;
+}
+#myBtn {
+    background-color: #1D1F20;
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+    line-height: 0;
+    width: 100px;
+}
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.navbar li{
+    display: inline-block;
+}
+.navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.navbar a:hover {
+    background-color: white;
+    color: black;
+}
+.navbar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+@keyframes slide-in-anim {
+    20% {
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(-45%);
+    }
+    75% {
+        transform: translateX(-52%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%);
+    }
+}
