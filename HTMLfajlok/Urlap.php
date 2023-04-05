@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Űrlap</title>
     <link rel="stylesheet" href="CSSfajlok/Urlap.css">
-    <link rel="icon" type="image/ico" href="../Képek/icon.webp">
+    <link rel="icon" href="favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>

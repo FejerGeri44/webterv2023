@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Fun Factek</title>
     <link rel="stylesheet" href="/CSSfajlok/5oldal.css">
-    <link rel="icon" type="image/ico" href="../Képek/icon.webp"><!-- TODO -->
+    <link rel="icon" href="favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -28,11 +28,11 @@
     <p class="text">A következő videó a háború paródiája</p>
 <div class="container">
     <video controls width="640" height="360">
-        <source src="../Képek/Video.mp4" type="video/mp4"><!-- TODO -->
+        <source src="storage.php?vid=Video">
     </video><br>
     <p class="text">Vajon ki tudod találni melyik híres úriember hangját hallhatod a felvételen?</p>
     <audio controls>
-        <source src="../Képek/Hanganyag.mp3" type="audio/mpeg"><!-- TODO -->
+        <source src="storage.php?vid=Hanganyag">
     </audio>
 </div>
 
@@ -85,7 +85,7 @@
 
     function checkCookie() {
         let user = getCookie("username");
-        if (user !== "")
+        if (user !== ""){}
         else {
             user = prompt("Please enter your name:", "");
             if (user !== "" && user != null) {

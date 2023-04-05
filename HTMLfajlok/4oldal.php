@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>A háború kimenetele</title>
     <link rel="stylesheet" href="/CSSfajlok/4oldal.css">
-    <link rel="icon" type="image/ico" href="../Képek/icon.webp"><!-- TODO -->
+    <link rel="icon" href="favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -30,7 +30,7 @@
 </p><br>
 
 <figure class="slide">
-    <img src="../Képek/oroszok.jpg" alt="katonak"/>
+    <img src="storage.php?img=katonak" alt="katonak"/>
     <figcaption>
         <h3>Munkás-paraszt Vörös Hadsereg</h3>
         <p>A Vörös Hadsereg a Szovjetunió fegyveres erőinek része volt 1918 és 1946 között.</p><a href="https://hu.wikipedia.org/wiki/Munk%C3%A1s-paraszt_V%C3%B6r%C3%B6s_Hadsereg" target="_blank" class="read-more">Bővebben</a>
@@ -44,7 +44,7 @@
 </p><br>
 
 <figure class="slide">
-    <img src="../Képek/katonak.jpg" alt="katonak"/>
+    <img src="storage.php?img=katonak" alt="katonak"/>
     <figcaption>
         <h3>Német katonák</h3>
         <p>Harmadik Birodalom fegyveres erejének megnevezése volt 1935-től, a sorkatonaság bevezetésétől, 1946-ig.</p><a href="https://hu.wikipedia.org/wiki/Wehrmacht" target="_blank" class="read-more">Bővebben</a>
@@ -58,7 +58,7 @@
 </p><br>
 
 <figure class="slide">
-    <img src="../Képek/Kurszki%20csata.jpg" alt="Kurszk"/>
+    <img src="storage.php?img=Kurszki_csata" alt="Kurszk"/>
     <figcaption>
         <h3>Kurszki csata</h3>
         <p>A kurszki csata a második világháború egyik legjelentősebb ütközetsorozata volt.</p><a href="https://hu.wikipedia.org/wiki/Kurszki_csata" target="_blank" class="read-more">Bővebben</a>
@@ -131,7 +131,7 @@
 
     function checkCookie() {
         let user = getCookie("username");
-        if (user !== "")
+        if (user !== ""){}
         else {
             user = prompt("Please enter your name:", "");
             if (user !== "" && user != null) {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Adolf Hitler</title>
     <link rel="stylesheet" href="/CSSfajlok/2oldal.css">
-    <link rel="icon" type="image/ico" href="../Képek/icon.webp"><!-- TODO -->
+    <link rel="icon" href="favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -120,7 +120,7 @@
 
     function checkCookie() {
         let user = getCookie("username");
-        if (user !== "")
+        if (user !== ""){}
         else {
             user = prompt("Please enter your name:", "");
             if (user !== "" && user != null) {

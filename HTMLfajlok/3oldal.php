@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>A háború kirobbanasa</title>
     <link rel="stylesheet" href="/CSSfajlok/3oldal.css">
-    <link rel="icon" type="image/ico" href="../Képek/icon.webp"><!-- TODO -->
+    <link rel="icon" href="favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -33,7 +33,7 @@
 </div>
 
 <figure class="slide">
-    <img src="../Képek/ujsag.jpg" alt="Megszállás"/>
+    <img src="storage.php?img=ujsag" alt="Megszállás"/>
     <figcaption>
         <h3>Lengyelországi hadjárat</h3>
         <p>Lengyelország megszállását 1939-ben a hitleri Német Birodalom, a sztálini Szovjetunió és egy kisebb németbarát szlovák kontingens hajtotta végre.</p><a href="https://hu.wikipedia.org/wiki/Lengyelorsz%C3%A1gi_hadj%C3%A1rat" target="_blank" class="read-more">Bővebben</a>
@@ -88,7 +88,7 @@
 </table><br><br>
 
 <figure class="slide">
-    <img src="../Képek/Churchill.jpg" alt="Churcill"/>
+    <img src="storage.php?img=Churchill" alt="Churchill"/>
     <figcaption>
         <h3>Winston Churchill</h3>
         <p>Kiemelkedő képességű államférfi, szónok és stratéga, a brit hadsereg tisztje.</p><a href="https://en.wikipedia.org/wiki/Winston_Churchill" target="_blank" class="read-more">Bővebben</a>
@@ -136,7 +136,7 @@
 
     function checkCookie() {
         let user = getCookie("username");
-        if (user !== "")
+        if (user !== ""){}
         else {
             user = prompt("Please enter your name:", "");
             if (user !== "" && user != null) {

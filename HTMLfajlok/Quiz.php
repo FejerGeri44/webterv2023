@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Quiz</title>
     <link rel="stylesheet" href="/CSSfajlok/altalanos.css">
-    <link rel="icon" type="image/ico" href="../Képek/icon.webp"><!-- TODO -->
+    <link rel="icon" href="favicon.webp">
 </head>
 <body>
 <div class="navbar">

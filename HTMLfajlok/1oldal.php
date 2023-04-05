@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>A második világháború előzményei</title>
     <link rel="stylesheet" href="/CSSfajlok/1oldal.css">
-    <link rel="icon" type="image/ico" href="../Képek/icon.webp"><!-- TODO -->
+    <link rel="icon" href="favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body onload="checkCookie()">
@@ -27,7 +27,7 @@
 <br><br>
 
 <figure class="slide">
-    <img src="../Képek/sorpuccs.jpg" alt="sörpuccs"/>
+    <img src="storage.php?img=sorpuccs" alt="sörpuccs"/>
     <figcaption>
         <h3>A müncheni sörpuccs</h3>
         <p>A müncheni sörpuccs Adolf Hitler vezetésével lezajlott sikertelen, erőszakos hatalomátvételi kísérlet 1923-ban</p><a href="https://hu.wikipedia.org/wiki/M%C3%BCncheni_s%C3%B6rpuccs" target="_blank" class="read-more">Bővebben</a>
@@ -83,7 +83,7 @@
 </ul><br><br>
 
 <figure class="slide">
-    <img src="../Képek/pakt.webp" alt="Orosz-német paktum"/>
+    <img src="storage.php?img=pakt" alt="Orosz-német paktum"/>
     <figcaption>
         <h3>A Molotov-paktum</h3>
         <p>A német–szovjet megnemtámadási szerződés Moszkvában Vjacseszlav Molotov szovjet és Joachim von Ribbentrop német külügyminiszterek által aláírt megállapodás</p><a href="https://hu.wikipedia.org/wiki/Molotov%E2%80%93Ribbentrop-paktum" target="_blank" class="read-more">Bővebben</a>
@@ -141,7 +141,7 @@
 
     function checkCookie() {
         let user = getCookie("username");
-        if (user !== "")
+        if (user !== ""){}
         else {
             user = prompt("Please enter your name:", "");
             if (user !== "" && user != null) {

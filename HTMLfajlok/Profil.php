@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Profil</title>
     <link rel="stylesheet" href="/CSSfajlok/Profil.css">
-    <link rel="icon" type="image/ico" href="../Képek/icon.webp"><!-- TODO -->
+    <link rel="icon" href="favicon.webp">
 </head>
 <body>
 
@@ -61,7 +61,7 @@
 
     function checkCookie() {
         let user = getCookie("username");
-        if (user !== "")
+        if (user !== ""){}
         else {
             user = prompt("Please enter your name:", "");
             if (user !== "" && user != null) {
