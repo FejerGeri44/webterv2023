@@ -18,6 +18,7 @@ function getRoutes(){
             "ujsag" => "../Képek/ujsag.jpg",
             "hitler_career" => "../Képek/hitler_career.jpg",
             "hitler_szinesben" => "../Képek/hitler_szinesben.jpg",
+            "downfall" => "../Képek/downfall.jpg"
         )
     );
 }

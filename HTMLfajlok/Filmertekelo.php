@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Filmek</title>
-    <link rel="stylesheet" href="/CSSfajlok/altalanos.css">
+    <link rel="stylesheet" href="../public/CSSfajlok/altalanos.css">
     <link rel="icon" href="favicon.webp">
 </head>
 <body>
@@ -25,10 +25,10 @@
             <img src="storage.php?img=hitler_career" alt="Hitler: Egy karrier története">
         </td>
         <td>
-            <img src="storage.php?img=hitler_szinesben" alt="Hitler Színesben"
+            <img src="storage.php?img=hitler_szinesben" alt="Hitler Színesben">
         </td>
         <td>
-
+            <img src="storage.php?img=downfall" alt="Downfall">
         </td>
     </tr>
     <tr>
@@ -44,7 +44,7 @@
     </tr>
     <tr>
         <td colspan="3">
-            <h3 align="center">Film tartalma</h3>
+            <h3 align="center">Film tartalma</h3> <!--TODO-->
         </td>
     </tr>
     <tr>
@@ -60,11 +60,10 @@
         </td>
         <td>
             <p>
-
+                Berlin, 1945 április. Egy nép a bukására vár. A főváros utcáin kegyetlen harcok folynak. A Birodalom helyzete a Vörös Hadsereg előrenyomulásával egyre reménytelenebbé válik. A folyamatos bombázások állandó rettegésben és életveszélyben tartják a város elkeseredett lakosságát. Hitler hűséges tábornokaival és néhány hívével elsáncolta magát a vezetőségi bunkerben. Miközben az utcákon kétségbeesett jelenetek játszódnak le, Hitler a Harmadik Birodalom teljes pusztulását a bunker falai között éli át. Jóllehet Berlint már lehetetlen tartani, a Führer mégis tiltakozik a búvóhely elhagyása ellen - Albert Speer építészhez hasonlóan a színpadon akar lenni, amikor legördül a függöny. Minthogy szívvel-lélekkel vesztes népe mellett áll, a színről való tragikus lelépését tervezi a mélyen a föld alatt húzódó bunker-rendszerben. Már csak néhány órája maradt, mielőtt közös öngyilkosságuk előtt feleségül veszi Eva Braunt. A vég elkerülhetetlenül közeleg, Hitler mindent az utolsó részletig kidolgoz: miután ő és szeretője meghalt, holttestüket a birodalmi kancellária udvarában fogják elégetni, nehogy a tetemük ellenséges kézre jusson. Az oroszok feltétel nélküli megadást követelnek, ezért hűséges hívei közül, vezetőjük példáját követve, többen is az önkéntes halált választják a rájuk váró kínkeserves meghurcoltatás helyett. A magát szintén a bunkerben meghúzó Magda Goebbels megmérgezi mind a hat gyermekét, majd férjével együtt véget vet életének. Röviddel ezután Hitler személyi titkárnőjének, a végsőkig kitartó Traudl Jungénak és még néhányaknak az utolsó pillanatban sikerül kimenekülnie a bunkerből, és átjutnak az oroszok ostromgyűrűjén...
             </p>
         </td>
     </tr>
 </table>
-
 </body>
 </html>
