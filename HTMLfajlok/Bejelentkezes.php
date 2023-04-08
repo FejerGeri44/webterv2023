@@ -17,10 +17,6 @@
                 <input type="text" id="username-label" placeholder="Add meg a felhasználóneved" required>
             </div>
             <div class="input-box">
-                <label for="email-label">E-mail cím:<span class="required">*</span>:</label>
-                <input type="email" name="email" id="email-label" placeholder="valaki@pelda.com">
-            </div>
-            <div class="input-box">
                 <label for="password-label">Jelszó<span class="required">*</span>:</label>
                 <input type="password" name="password" id="password-label" placeholder="Add meg egy jelszót" required>
             </div>

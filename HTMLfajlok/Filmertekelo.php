@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Filmek</title>
-    <link rel="stylesheet" href="../public/CSSfajlok/altalanos.css">
+    <link rel="stylesheet" href="CSSfajlok/altalanos.css">
     <link rel="icon" href="favicon.webp">
 </head>
 <body>

@@ -10,33 +10,33 @@
 <body>
 <div class="container">
     <div class="title">Regisztráció</div>
-    <form action="index.php?view=1oldal" method="post">
+    <form action="index.php?view=Bejelentkezes" method="post">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Teljes név*</span>
                 <label>
-                    <input type="text" placeholder="Add meg a nevedet" required>
+                    <input type="text" placeholder="Add meg a nevedet" name="name" required>
                 </label>
             </div>
 
             <div class="input-box">
                 <label for="username-label">Felhasználónév<span class="required">*</span>:</label>
-                <input type="text" id="username-label" placeholder="Add meg a felhasználóneved" required>
+                <input type="text" id="username-label" name="username" placeholder="Add meg a felhasználóneved" required>
             </div>
 
             <div class="input-box">
                 <label for="email-label">E-mail cím:<span class="required">*</span></label>
-                <input type="email" id="email-label" placeholder="Add meg az email címedet" required>
+                <input type="email" id="email-label" name="email" placeholder="Add meg az email címedet" required>
             </div>
 
             <div class="input-box">
-                <label for="year-of-birth-label">Mikor született:</label>
-                    <input type="date" id="year-of-birth-label" required>
+                <label for="number-label">Telefonszám:<span class="required">*</span></label>
+                <input type="tel" id="number-label" name="number" placeholder="Add meg a telefonszámodat" required>
             </div>
 
             <div class="input-box">
                 <label for="password-label">Jelszó<span class="required">*</span>:</label>
-                <input type="password" id="password-label" placeholder="Add meg egy jelszót" required>
+                <input type="password" id="password-label" name="password" placeholder="Add meg egy jelszót" required>
             </div>
 
             <div class="input-box">
@@ -45,11 +45,10 @@
             </div>
         </div>
 
-
         <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1">
-            <input type="radio" name="gender" id="dot-2">
-            <input type="radio" name="gender" id="dot-3">
+            <input type="radio" name="gender" id="dot-1" value="f">
+            <input type="radio" name="gender" id="dot-2" value="n">
+            <input type="radio" name="gender" id="dot-3" value="o">
             <span class="gender-title">Nemed*</span>
             <div class="category">
                 <label for="dot-1">
