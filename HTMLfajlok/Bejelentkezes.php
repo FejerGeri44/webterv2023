@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Bejelentkezés</title>
-    <link rel="stylesheet" href="/CSSfajlok/Bejelentkezes.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/Bejelentkezes.css">
+    <link rel="icon" href="../public/favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="container">
     <div class="title">Bejelentkezés</div>
-    <form action="index.php?post=login" method="post">
+    <form action="index.php?post=Profil" method="post">
         <div class="user-details">
             <div class="input-box">
                 <label for="username-label">Felhasználónév<span class="required">*</span>:</label>
@@ -25,7 +25,7 @@
             <input type="submit" value="Bejelentkezés">
         </div>
     </form>
-    <form action="index.php?post=Regisztracio" method="post">
+    <form action="Regisztracio.php" method="post">
         <div class="button">
             <input type="submit" value="Ugrás a regisztrációra">
         </div>

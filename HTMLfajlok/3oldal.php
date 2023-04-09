@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>A háború kirobbanasa</title>
-    <link rel="stylesheet" href="/CSSfajlok/3oldal.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/3oldal.css">
+    <link rel="icon" href="../public/favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <div class="navbar">
     <ul>
-        <li><a href="index.php?view=1oldal">A második világháború előzményei</a></li>
-        <li><a href="index.php?view=2oldal">Adolf Hitler</a></li>
-        <li><a class="active" href="index.php?view=3oldal">A háború kirobbanása</a></li>
-        <li><a href="index.php?view=4oldal">A háború kimenetele</a></li>
-        <li><a href="index.php?view=5oldal">Érdekességek</a></li>
-        <li><a href="index.php?view=Profil">Profil</a></li>
+        <li><a href="1oldal.php">A második világháború előzményei</a></li>
+        <li><a href="2oldal.php">Adolf Hitler</a></li>
+        <li><a class="active" href="#">A háború kirobbanása</a></li>
+        <li><a href="4oldal.php">A háború kimenetele</a></li>
+        <li><a href="5oldal.php">Érdekességek</a></li>
+        <li><a href="Profil.php">Profil</a></li>
     </ul>
 </div>
 
@@ -33,7 +33,7 @@
 </div>
 
 <figure class="slide">
-    <img src="storage.php?img=ujsag" alt="Megszállás"/>
+    <img src="../Képek/ujsag.jpg" alt="Megszállás"/>
     <figcaption>
         <h3>Lengyelországi hadjárat</h3>
         <p>Lengyelország megszállását 1939-ben a hitleri Német Birodalom, a sztálini Szovjetunió és egy kisebb németbarát szlovák kontingens hajtotta végre.</p><a href="https://hu.wikipedia.org/wiki/Lengyelorsz%C3%A1gi_hadj%C3%A1rat" target="_blank" class="read-more">Bővebben</a>
@@ -88,7 +88,7 @@
 </table><br><br>
 
 <figure class="slide">
-    <img src="storage.php?img=Churchill" alt="Churchill"/>
+    <img src="../Képek/Churchill.jpg" alt="Churchill"/>
     <figcaption>
         <h3>Winston Churchill</h3>
         <p>Kiemelkedő képességű államférfi, szónok és stratéga, a brit hadsereg tisztje.</p><a href="https://en.wikipedia.org/wiki/Winston_Churchill" target="_blank" class="read-more">Bővebben</a>

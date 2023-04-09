@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Filmek</title>
-    <link rel="stylesheet" href="CSSfajlok/altalanos.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/altalanos.css">
+    <link rel="icon" href="../public/favicon.webp">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
-<body>
+<body class="body">
 <div class="navbar">
     <ul>
-        <li><a href="index.php?view=Quiz">Quiz</a></li>
-        <li><a class="active" href="index.php?view=Filmertekelo">Filmek</a></li>
-        <li><a href="index.php?view=Chat">Chat</a></li>
+        <li><a href="Quiz.php">Quiz</a></li>
+        <li><a class="active" href="#">Filmek</a></li>
+        <li><a href="Chat.php">Chat</a></li>
     </ul>
 </div>
 <div class="container"><br>
@@ -22,18 +28,24 @@
 <table>
     <tr>
         <td>
-            <img src="storage.php?img=hitler_career" alt="Hitler: Egy karrier története">
+            <img src="../Képek/hitler_career.jpg" alt="Hitler: Egy karrier története">
         </td>
         <td>
-            <img src="storage.php?img=hitler_szinesben" alt="Hitler Színesben">
+            <img src="../Képek/hitler_szinesben.jpg" alt="Hitler Színesben">
         </td>
         <td>
-            <img src="storage.php?img=downfall" alt="Downfall">
+            <img src="../Képek/downfall.jpg" alt="Downfall">
         </td>
     </tr>
     <tr>
         <td>
-
+            <div>
+                <?php
+                    for ($i=0; $i<5;$i++){
+                        echo "<span class='glyphicon glyphicon-star-empty film-rating-stars Hitler_career-rating-".($i+1)."'></span>";
+                    }
+                ?>
+            </div>
         </td>
         <td>
 
@@ -44,7 +56,7 @@
     </tr>
     <tr>
         <td colspan="3">
-            <h3 align="center">Film tartalma</h3> <!--TODO-->
+            <h3>Film tartalma</h3>
         </td>
     </tr>
     <tr>
@@ -65,5 +77,32 @@
         </td>
     </tr>
 </table>
+<form action="Profil.php" method="post">
+    <div class="button">
+        <input type="submit" value="Vissza a profilra">
+    </div>
+    <script>
+        $(document).ready(function (){
+           $(".film-rating-stars").click(function (event){
+               var classes = event.target.className.split(" ");
+               var number = classes[3].split("-")[2];
+               console.log("ajax.call");
+               jQuery.ajax({
+                   url:"../Ajax/ratings.php",
+                   type:"post",
+                   data: {name:"filcim", num:number},
+                   success:function (res){
+                       if(res === "success"){
+                           for(var i=0; i<number;i++) {
+                               document.getElementsByClassName("Hitler_career-rating-" + i)[0].className.replace("-empty", "");
+                           }
+                       }else{
+                           alert(res);
+                       }
+                   }
+               });
+           });
+        });
+    </script>
 </body>
 </html>

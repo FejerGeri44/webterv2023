@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz</title>
-    <link rel="stylesheet" href="/CSSfajlok/altalanos.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/altalanos.css">
+    <link rel="icon" href="../public/favicon.webp">
 </head>
 <body>
 <div class="navbar">
@@ -18,5 +18,9 @@
     <p class="title">Quiz</p>
 </div>
 <hr><hr>
+<form action="index.php?post=Profil" method="post">
+    <div class="button">
+        <input type="submit" value="Vissza a profilra">
+    </div>
 </body>
 </html>

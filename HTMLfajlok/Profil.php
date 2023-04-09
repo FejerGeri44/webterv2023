@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Profil</title>
-    <link rel="stylesheet" href="/CSSfajlok/Profil.css">
+    <link rel="stylesheet" href="../public/CSSfajlok/Profil.css">
     <link rel="icon" href="favicon.webp">
 </head>
 <body>
@@ -25,9 +25,9 @@
 <hr><hr>
 <div class="navbar">
     <ul>
-        <li><a href="index.php?view=Quiz">Quiz</a></li>
-        <li><a href="index.php?view=Filmertekelo">Filmek</a></li>
-        <li><a href="index.php?view=Chat">Chat</a></li>
+        <li><a href="Quiz.php">Quiz</a></li>
+        <li><a href="Filmertekelo.php">Filmek</a></li>
+        <li><a href="Chat.php">Chat</a></li>
     </ul>
 </div>
 <hr><br><br><br><br>
