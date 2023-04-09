@@ -40,6 +40,7 @@
 <p class="text">A gazdasági válságot követően Németország gazdaságilag és politikailag is megerősödött, aminek közvetlen következménye a hadipar állam álltal rendszerezett újjáépítése volt.
     <br>
 
+
 <table class="tablehead">
     <caption>Német haderő</caption>
     <tr>
