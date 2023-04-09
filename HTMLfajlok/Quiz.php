@@ -9,16 +9,16 @@
 <body>
 <div class="navbar">
     <ul>
-        <li><a class="active" href="../HTMLfajlok/Quiz.php">Quiz</a></li>
-        <li><a href="../HTMLfajlok/Filmertekelo.php">Filmek</a></li>
-        <li><a href="../HTMLfajlok/Chat.php">Chat</a></li>
+        <li><a class="active" href="#">Quiz</a></li>
+        <li><a href="Filmertekelo.php">Filmek</a></li>
+        <li><a href="Chat.php">Chat</a></li>
     </ul>
 </div>
 <div class="container"><br>
     <p class="title">Quiz</p>
 </div>
 <hr><hr>
-<form action="index.php?post=Profil" method="post">
+<form action="Profil.php" method="post">
     <div class="button">
         <input type="submit" value="Vissza a profilra">
     </div>

@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
 <div class="navbar">
     <ul>
         <li><a href="1oldal.php">A második világháború előzményei</a></li>

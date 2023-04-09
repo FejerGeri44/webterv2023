@@ -7,6 +7,8 @@
     <link rel="icon" href="../public/favicon.webp">
 </head>
 <body>
+
+
 <div class="navbar">
     <ul>
         <li><a href="Quiz.php">Quiz</a></li>
