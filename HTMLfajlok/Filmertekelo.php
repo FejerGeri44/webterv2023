@@ -41,9 +41,9 @@
         <td>
             <div>
                 <?php
-                    for ($i=0; $i<5;$i++){
-                        echo "<span class='glyphicon glyphicon-star-empty film-rating-stars Hitler_career-rating-".($i+1)."'></span>";
-                    }
+                for ($i=0; $i<5;$i++){
+                    echo "<span class='glyphicon glyphicon-star-empty film-rating-stars Hitler_career-rating-".($i+1)."'></span>";
+                }
                 ?>
             </div>
         </td>
@@ -83,25 +83,25 @@
     </div>
     <script>
         $(document).ready(function (){
-           $(".film-rating-stars").click(function (event){
-               var classes = event.target.className.split(" ");
-               var number = classes[3].split("-")[2];
-               console.log("ajax.call");
-               jQuery.ajax({
-                   url:"../Ajax/ratings.php",
-                   type:"post",
-                   data: {name:"filcim", num:number},
-                   success:function (res){
-                       if(res === "success"){
-                           for(var i=0; i<number;i++) {
-                               document.getElementsByClassName("Hitler_career-rating-" + i)[0].className.replace("-empty", "");
-                           }
-                       }else{
-                           alert(res);
-                       }
-                   }
-               });
-           });
+            $(".film-rating-stars").click(function (event){
+                var classes = event.target.className.split(" ");
+                var number = classes[3].split("-")[2];
+                console.log("ajax.call");
+                jQuery.ajax({
+                    url:"../Ajax/ratings.php",
+                    type:"post",
+                    data: {name:"filcim", num:number},
+                    success:function (res){
+                        if(res === "success"){
+                            for(var i=0; i<number;i++) {
+                                document.getElementsByClassName("Hitler_career-rating-" + i)[0].className.replace("-empty", "");
+                            }
+                        }else{
+                            alert(res);
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
