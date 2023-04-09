@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>A második világháború előzményei</title>
-    <link rel="stylesheet" href="/CSSfajlok/1oldal.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/1oldal.css">
+    <link rel="icon" href="../public/favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body onload="checkCookie()">
 
 <div class="navbar">
     <ul>
-        <li><a class="active" href="index.php?view=1oldal">A második világháború előzményei</a></li>
-        <li><a href="index.php?view=2oldal">Adolf Hitler</a></li>
-        <li><a href="index.php?view=3oldal">A háború kirobbanása</a></li>
-        <li><a href="index.php?view=4oldal">A háború kimenetele</a></li>
-        <li><a href="index.php?view=5oldal">Érdekességek</a></li>
-        <li><a href="index.php?view=Profil">Profil</a></li>
+        <li><a class="active" href="1oldal.php">A második világháború előzményei</a></li>
+        <li><a href="2oldal.php">Adolf Hitler</a></li>
+        <li><a href="3oldal.php">A háború kirobbanása</a></li>
+        <li><a href="4oldal.php">A háború kimenetele</a></li>
+        <li><a href="5oldal.php">Érdekességek</a></li>
+        <li><a href="Profil.php">Profil</a></li>
     </ul>
 </div>
 
@@ -27,7 +27,7 @@
 <br><br>
 
 <figure class="slide">
-    <img src="storage.php?img=sorpuccs" alt="sörpuccs"/>
+    <img src="../Képek/sorpuccs.jpg" alt="sörpuccs"/>
     <figcaption>
         <h3>A müncheni sörpuccs</h3>
         <p>A müncheni sörpuccs Adolf Hitler vezetésével lezajlott sikertelen, erőszakos hatalomátvételi kísérlet 1923-ban</p><a href="https://hu.wikipedia.org/wiki/M%C3%BCncheni_s%C3%B6rpuccs" target="_blank" class="read-more">Bővebben</a>
@@ -83,7 +83,7 @@
 </ul><br><br>
 
 <figure class="slide">
-    <img src="storage.php?img=pakt" alt="Orosz-német paktum"/>
+    <img src="../Képek/pakt.jpg" alt="Orosz-német paktum"/>
     <figcaption>
         <h3>A Molotov-paktum</h3>
         <p>A német–szovjet megnemtámadási szerződés Moszkvában Vjacseszlav Molotov szovjet és Joachim von Ribbentrop német külügyminiszterek által aláírt megállapodás</p><a href="https://hu.wikipedia.org/wiki/Molotov%E2%80%93Ribbentrop-paktum" target="_blank" class="read-more">Bővebben</a>

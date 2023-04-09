@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Filmek</title>
-    <link rel="stylesheet" href="CSSfajlok/altalanos.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/altalanos.css">
+    <link rel="icon" href="../public/favicon.webp">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="navbar">
     <ul>
-        <li><a href="index.php?view=Quiz">Quiz</a></li>
-        <li><a class="active" href="index.php?view=Filmertekelo">Filmek</a></li>
-        <li><a href="index.php?view=Chat">Chat</a></li>
+        <li><a href="../HTMLfajlok/Quiz.php">Quiz</a></li>
+        <li><a class="active" href="../HTMLfajlok/Filmertekelo.php">Filmek</a></li>
+        <li><a href="../HTMLfajlok/Chat.php">Chat</a></li>
     </ul>
 </div>
 <div class="container"><br>
@@ -22,18 +26,24 @@
 <table>
     <tr>
         <td>
-            <img src="storage.php?img=hitler_career" alt="Hitler: Egy karrier története">
+            <img src="../Képek/hitler_career.jpg" alt="Hitler: Egy karrier története">
         </td>
         <td>
-            <img src="storage.php?img=hitler_szinesben" alt="Hitler Színesben">
+            <img src="../Képek/hitler_szinesben.jpg" alt="Hitler Színesben">
         </td>
         <td>
-            <img src="storage.php?img=downfall" alt="Downfall">
+            <img src="../Képek/downfall.jpg" alt="Downfall">
         </td>
     </tr>
     <tr>
         <td>
-
+            <div>
+                <?php
+                for ($i=0; $i<5;$i++){
+                    echo "<span class='glyphicon glyphicon-star-empty film-rating-stars Hitler_career-rating-".($i+1)."'></span>";
+                }
+                ?>
+            </div>
         </td>
         <td>
 
@@ -44,7 +54,7 @@
     </tr>
     <tr>
         <td colspan="3">
-            <h3 align="center">Film tartalma</h3> <!--TODO-->
+            <h3>Film tartalma</h3> <!--TODO-->
         </td>
     </tr>
     <tr>

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Profil</title>
-    <link rel="stylesheet" href="/CSSfajlok/Profil.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/Profil.css">
+    <link rel="icon" href="../public/favicon.webp">
 </head>
 <body>
 
 <div class="navbar">
     <ul>
-        <li><a href="index.php?view=1oldal">A második világháború előzményei</a></li>
-        <li><a href="index.php?view=2oldal">Adolf Hitler</a></li>
-        <li><a href="index.php?view=3oldal">A háború kirobbanása</a></li>
-        <li><a href="index.php?view=4oldal">A háború kimenetele</a></li>
-        <li><a href="index.php?view=5oldal">Érdekességek</a></li>
-        <li><a class="active" href="index.php?view=Profil">Profil</a></li>
+        <li><a href="1oldal.php">A második világháború előzményei</a></li>
+        <li><a href="2oldal.php">Adolf Hitler</a></li>
+        <li><a href="3oldal.php">A háború kirobbanása</a></li>
+        <li><a href="4oldal.php">A háború kimenetele</a></li>
+        <li><a href="5oldal.php">Érdekességek</a></li>
+        <li><a class="active" href="Profil.php">Profil</a></li>
     </ul>
 </div>
 
@@ -25,13 +25,13 @@
 <hr><hr>
 <div class="navbar">
     <ul>
-        <li><a href="index.php?view=Quiz">Quiz</a></li>
-        <li><a href="index.php?view=Filmertekelo">Filmek</a></li>
-        <li><a href="index.php?view=Chat">Chat</a></li>
+        <li><a href="../HTMLfajlok/Quiz.php">Quiz</a></li>
+        <li><a href="../HTMLfajlok/Filmertekelo.php">Filmek</a></li>
+        <li><a href="../HTMLfajlok/Chat.php">Chat</a></li>
     </ul>
 </div>
 <hr><br><br><br><br>
-<form action="index.php?post=Bejelentkezes" method="post">
+<form action="../HTMLfajlok/Bejelentkezes.php" method="post">
     <div class="button">
         <input type="submit" value="Kijelentkezés">
     </div>

@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>A háború kimenetele</title>
-    <link rel="stylesheet" href="/CSSfajlok/4oldal.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/4oldal.css">
+    <link rel="icon" href="../public/favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <div class="navbar">
     <ul>
-        <li><a href="index.php?view=1oldal">A második világháború előzményei</a></li>
-        <li><a href="index.php?view=2oldal">Adolf Hitler</a></li>
-        <li><a href="index.php?view=3oldal">A háború kirobbanása</a></li>
-        <li><a class="active" href="index.php?view=4oldal">A háború kimenetele</a></li>
-        <li><a href="index.php?view=5oldal">Érdekességek</a></li>
-        <li><a href="index.php?view=Profil">Profil</a></li>
+        <li><a href="1oldal.php">A második világháború előzményei</a></li>
+        <li><a href="2oldal.php">Adolf Hitler</a></li>
+        <li><a href="3oldal.php">A háború kirobbanása</a></li>
+        <li><a class="active" href="4oldal.php">A háború kimenetele</a></li>
+        <li><a href="5oldal.php">Érdekességek</a></li>
+        <li><a href="Profil.php">Profil</a></li>
     </ul>
 </div>
 
@@ -30,7 +30,7 @@
 </p><br>
 
 <figure class="slide">
-    <img src="storage.php?img=katonak" alt="katonak"/>
+    <img src="../Képek/katonak.jpg" alt="katonak"/>
     <figcaption>
         <h3>Munkás-paraszt Vörös Hadsereg</h3>
         <p>A Vörös Hadsereg a Szovjetunió fegyveres erőinek része volt 1918 és 1946 között.</p><a href="https://hu.wikipedia.org/wiki/Munk%C3%A1s-paraszt_V%C3%B6r%C3%B6s_Hadsereg" target="_blank" class="read-more">Bővebben</a>
@@ -44,7 +44,7 @@
 </p><br>
 
 <figure class="slide">
-    <img src="storage.php?img=katonak" alt="katonak"/>
+    <img src="../Képek/katonak.jpg" alt="katonak"/>
     <figcaption>
         <h3>Német katonák</h3>
         <p>Harmadik Birodalom fegyveres erejének megnevezése volt 1935-től, a sorkatonaság bevezetésétől, 1946-ig.</p><a href="https://hu.wikipedia.org/wiki/Wehrmacht" target="_blank" class="read-more">Bővebben</a>
@@ -58,7 +58,7 @@
 </p><br>
 
 <figure class="slide">
-    <img src="storage.php?img=Kurszki_csata" alt="Kurszk"/>
+    <img src="../Képek/Kurszki_csata.jpg" alt="Kurszk"/>
     <figcaption>
         <h3>Kurszki csata</h3>
         <p>A kurszki csata a második világháború egyik legjelentősebb ütközetsorozata volt.</p><a href="https://hu.wikipedia.org/wiki/Kurszki_csata" target="_blank" class="read-more">Bővebben</a>

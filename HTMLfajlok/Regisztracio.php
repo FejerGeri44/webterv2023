@@ -1,87 +1,16 @@
-<?php
-$conn = mysqli_connect("localhost", "root", "", "registration");
-if (!$conn) {
-    die("Kapcsolódási hiba: " . mysqli_connect_error());
-}
-$name = $_POST["name"];
-$username = $_POST["username"];
-$email = $_POST["email"];
-$number = $_POST["number"];
-$password = $_POST["password"];
-$password = password_hash($password, PASSWORD_DEFAULT);
-$passwordagain = $_POST["passwordagain"];
-$gender = NULL;
-$hibak = [];
-
-if(isset($_POST['regisztracio'])) {
-$sql = "INSERT INTO users (name, username, email, number, password, gender) VALUES (?, ?, ?, ?, ?, ?)";
-$stmt = mysqli_stmt_init($conn);
-if(mysqli_stmt_prepare($stmt, $sql)) {
-    mysqli_stmt_bind_param($stmt, "ssssss", $name, $username, $email, $number, $password, $gender);
-    mysqli_stmt_execute($stmt);
-    echo "Sikeres regisztráció!";
-} else {
-    echo "Hiba történt az adatok felvitelekor!";
-}
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
-
-}
-if (isset($_POST["regisztracio"])) {
-
-    if (!isset($_POST["name"]) || trim($_POST["name"]) === "") {
-        $hibak[] = "A neved megadása kötelező!";
-    }
-    if (!isset($_POST["username"]) || trim($_POST["username"]) === "") {
-        $hibak[] = "A felhasználónév megadása kötelező!";
-    }
-    if (!isset($_POST["email"]) || trim($_POST["email"]) === "") {
-        $hibak[] = "Az email címed megadása kötelező!";
-    }
-    if (!isset($_POST["number"]) || trim($_POST["number"]) === "") {
-        $hibak[] = "A telefonszámod megadása kötelező!";
-    }
-    if (!isset($_POST["password"]) || trim($_POST["password"]) === "" || !isset($_POST["passwordagain"]) || trim($_POST["passwordagain"]) === "") {
-        $hibak[] = "A jelszó és az ellenőrző jelszó megadása kötelező!";
-    }
-    if (!isset($_POST["gender"]) || trim($_POST["gender"]) === "") {
-        $hibak[] = "A nemed megadása kötelező!";
-    }
-    if (isset($_POST["gender"])) {
-        $nem = $_POST["gender"];
-    }
-    if (strlen($username) < 5){
-        $hibak[] = "A felhasználónevednek legalább 5 karakterből kell állnia!";
-    }
-    if (strlen($password) < 4){
-        $hibak[] = "A jelszónak legalább 4 karakter hosszúnak kell lennie!";
-    }
-    if ($password !== $passwordagain) {
-        $hibak[] = "A jelszó és az ellenőrző jelszó nem ugyanaz!";
-    }
-    if ($number != 10){
-        $hibak[] = "A telefonszámod nem 10 számot tartalmaz!";
-    }
-    if (count($hibak) === 0) {
-        $siker = TRUE;
-    } else {
-        $siker = FALSE;
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <title>Regisztráció</title>
-    <link rel="stylesheet" href="/CSSfajlok/Regisztracio.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/Regisztracio.css">
+    <link rel="icon" href="../public/favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="container">
     <div class="title">Regisztráció</div>
-    <form action="index.php?view=Bejelentkezes" method="post">
+    <form action="Bejelentkezes.php" method="post">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Teljes név*</span>
@@ -144,7 +73,7 @@ if (isset($_POST["regisztracio"])) {
             <input type="submit" name="regisztracio" value="Regisztráció">
         </div>
     </form>
-    <form action="index.php?post=Bejelentkezes" method="post">
+    <form action="Bejelentkezes.php" method="post">
         <div class="button">
             <input type="submit" value="Ugrás a Bejelentkezésre">
         </div>
@@ -152,3 +81,80 @@ if (isset($_POST["regisztracio"])) {
 </div>
 </body>
 </html>
+<?php
+if (isset($_POST['regisztracio'])){
+    $abs_path = __DIR__ . "/Felhasznalok.txt";
+    $file = fopen($abs_path, "a");
+    if($file !== false){
+
+        $rows = file("Felhasznalok.txt");
+        $name = $_POST["name"];
+        $username = $_POST["username"];
+        $email = $_POST["email"];
+        $number = $_POST["number"];
+        $password = $_POST["password"];
+        $passwordagain = $_POST["passwordagain"];
+        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+        $gender = NULL;
+        $hibak = [];
+
+        if (isset($_POST["regisztracio"])) {
+
+            if (!isset($_POST["name"]) || trim($_POST["name"]) === "") {
+                $hibak[] = "A neved megadása kötelező!";
+            }
+            if (!isset($_POST["username"]) || trim($_POST["username"]) === "") {
+                $hibak[] = "A felhasználónév megadása kötelező!";
+            }
+            if (!isset($_POST["email"]) || trim($_POST["email"]) === "") {
+                $hibak[] = "Az email címed megadása kötelező!";
+            }
+            if (!isset($_POST["number"]) || trim($_POST["number"]) === "") {
+                $hibak[] = "A telefonszámod megadása kötelező!";
+            }
+            if (!isset($_POST["password"]) || trim($_POST["password"]) === "" || !isset($_POST["passwordagain"]) || trim($_POST["passwordagain"]) === "") {
+                $hibak[] = "A jelszó és az ellenőrző jelszó megadása kötelező!";
+            }
+            if (!isset($_POST["gender"]) || trim($_POST["gender"]) === "") {
+                $hibak[] = "A nemed megadása kötelező!";
+            }
+            if (isset($_POST["gender"])) {
+                $gender = $_POST["gender"];
+            }
+            if (strlen($username) < 5){
+                $hibak[] = "A felhasználónevednek legalább 5 karakterből kell állnia!";
+            }
+            if (strlen($password) < 4){
+                $hibak[] = "A jelszónak legalább 4 karakter hosszúnak kell lennie!";
+            }
+            if ($password !== $passwordagain) {
+                $hibak[] = "A jelszó és az ellenőrző jelszó nem ugyanaz!";
+            }
+            if (strlen($number) !== 10) {
+                $hibak[] = "A telefonszámodnak 10 karakternek kell lennie!";
+            }
+            if (count($hibak) === 0) {
+        $siker = TRUE;
+    } else {
+        $siker = FALSE;
+    }
+}
+        foreach($rows as $row){
+            $user = explode(",", $row);
+            if($user[1] == $username || $user[2] == $email){
+                echo "Az adott email cím vagy felhasználónév már regisztrálva van!";
+                fclose($file);
+                exit();
+            }
+        }
+
+        $new_user = array($name, $username, $email, $number, $password_hashed, $gender);
+        $new_user_string = implode(",", $new_user);
+        fwrite($file, $new_user_string);
+        fclose($file);
+        echo "Sikeres regisztráció!";
+    } else {
+        echo "Hiba történt a fájl megnyitása során.";
+    }
+}
+?>

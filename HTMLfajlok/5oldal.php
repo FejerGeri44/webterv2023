@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Fun Factek</title>
-    <link rel="stylesheet" href="/CSSfajlok/5oldal.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="stylesheet" href="../public/CSSfajlok/5oldal.css">
+    <link rel="icon" href="../public/favicon.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <div class="navbar">
     <ul>
-        <li><a href="index.php?view=1oldal">A második világháború előzményei</a></li>
-        <li><a href="index.php?view=2oldal">Adolf Hitler</a></li>
-        <li><a href="index.php?view=3oldal">A háború kirobbanása</a></li>
-        <li><a href="index.php?view=4oldal">A háború kimenetele</a></li>
-        <li><a class="active" href="index.php?view=5oldal">Érdekességek</a></li>
-        <li><a href="index.php?view=Profil">Profil</a></li>
+        <li><a href="1oldal.php">A második világháború előzményei</a></li>
+        <li><a href="2oldal.php">Adolf Hitler</a></li>
+        <li><a href="3oldal.php">A háború kirobbanása</a></li>
+        <li><a href="4oldal.php">A háború kimenetele</a></li>
+        <li><a class="active" href="5oldal.php">Érdekességek</a></li>
+        <li><a href="Profil.php">Profil</a></li>
     </ul>
 </div>
 
@@ -28,11 +28,11 @@
     <p class="text">A következő videó a háború paródiája</p>
 <div class="container">
     <video controls width="640" height="360">
-        <source src="storage.php?vid=Video">
+        <source src="../resources/storage/Video.mp4">
     </video><br>
     <p class="text">Vajon ki tudod találni melyik híres úriember hangját hallhatod a felvételen?</p>
     <audio controls>
-        <source src="storage.php?vid=Hanganyag">
+        <source src="../resources/storage/Hanganyag.mp3">
     </audio>
 </div>
 
