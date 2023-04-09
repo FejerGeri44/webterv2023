@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <div class="title">Bejelentkezés</div>
-    <form action="1oldal.php" method="post">
+    <form action="index.php?post=Profil" method="post">
         <div class="user-details">
             <div class="input-box">
                 <label for="username-label">Felhasználónév<span class="required">*</span>:</label>
@@ -25,7 +25,7 @@
             <input type="submit" value="Bejelentkezés">
         </div>
     </form>
-    <form action="../HTMLfajlok/Regisztracio.php" method="post">
+    <form action="Regisztracio.php" method="post">
         <div class="button">
             <input type="submit" value="Ugrás a regisztrációra">
         </div>

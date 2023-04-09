@@ -15,7 +15,7 @@
         <li><a href="2oldal.php">Adolf Hitler</a></li>
         <li><a href="3oldal.php">A háború kirobbanása</a></li>
         <li><a href="4oldal.php">A háború kimenetele</a></li>
-        <li><a class="active" href="5oldal.php">Érdekességek</a></li>
+        <li><a class="active" href="#">Érdekességek</a></li>
         <li><a href="Profil.php">Profil</a></li>
     </ul>
 </div>

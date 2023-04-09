@@ -18,5 +18,9 @@
     <p class="title">Quiz</p>
 </div>
 <hr><hr>
+<form action="index.php?post=Profil" method="post">
+    <div class="button">
+        <input type="submit" value="Vissza a profilra">
+    </div>
 </body>
 </html>

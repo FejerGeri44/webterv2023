@@ -11,7 +11,7 @@
 
 <div class="navbar">
     <ul>
-        <li><a class="active" href="1oldal.php">A második világháború előzményei</a></li>
+        <li><a class="active" href="#">A második világháború előzményei</a></li>
         <li><a href="2oldal.php">Adolf Hitler</a></li>
         <li><a href="3oldal.php">A háború kirobbanása</a></li>
         <li><a href="4oldal.php">A háború kimenetele</a></li>
@@ -149,7 +149,6 @@
             }
         }
     }
-
 </script>
 </body>
 </html>
