@@ -1,3 +1,74 @@
+<?php
+$conn = mysqli_connect("localhost", "root", "", "registration");
+if (!$conn) {
+    die("Kapcsolódási hiba: " . mysqli_connect_error());
+}
+$name = $_POST["name"];
+$username = $_POST["username"];
+$email = $_POST["email"];
+$number = $_POST["number"];
+$password = $_POST["password"];
+$password = password_hash($password, PASSWORD_DEFAULT);
+$passwordagain = $_POST["passwordagain"];
+$gender = NULL;
+$hibak = [];
+
+if(isset($_POST['regisztracio'])) {
+$sql = "INSERT INTO users (name, username, email, number, password, gender) VALUES (?, ?, ?, ?, ?, ?)";
+$stmt = mysqli_stmt_init($conn);
+if(mysqli_stmt_prepare($stmt, $sql)) {
+    mysqli_stmt_bind_param($stmt, "ssssss", $name, $username, $email, $number, $password, $gender);
+    mysqli_stmt_execute($stmt);
+    echo "Sikeres regisztráció!";
+} else {
+    echo "Hiba történt az adatok felvitelekor!";
+}
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+}
+if (isset($_POST["regisztracio"])) {
+
+    if (!isset($_POST["name"]) || trim($_POST["name"]) === "") {
+        $hibak[] = "A neved megadása kötelező!";
+    }
+    if (!isset($_POST["username"]) || trim($_POST["username"]) === "") {
+        $hibak[] = "A felhasználónév megadása kötelező!";
+    }
+    if (!isset($_POST["email"]) || trim($_POST["email"]) === "") {
+        $hibak[] = "Az email címed megadása kötelező!";
+    }
+    if (!isset($_POST["number"]) || trim($_POST["number"]) === "") {
+        $hibak[] = "A telefonszámod megadása kötelező!";
+    }
+    if (!isset($_POST["password"]) || trim($_POST["password"]) === "" || !isset($_POST["passwordagain"]) || trim($_POST["passwordagain"]) === "") {
+        $hibak[] = "A jelszó és az ellenőrző jelszó megadása kötelező!";
+    }
+    if (!isset($_POST["gender"]) || trim($_POST["gender"]) === "") {
+        $hibak[] = "A nemed megadása kötelező!";
+    }
+    if (isset($_POST["gender"])) {
+        $nem = $_POST["gender"];
+    }
+    if (strlen($username) < 5){
+        $hibak[] = "A felhasználónevednek legalább 5 karakterből kell állnia!";
+    }
+    if (strlen($password) < 4){
+        $hibak[] = "A jelszónak legalább 4 karakter hosszúnak kell lennie!";
+    }
+    if ($password !== $passwordagain) {
+        $hibak[] = "A jelszó és az ellenőrző jelszó nem ugyanaz!";
+    }
+    if ($number != 10){
+        $hibak[] = "A telefonszámod nem 10 számot tartalmaz!";
+    }
+    if (count($hibak) === 0) {
+        $siker = TRUE;
+    } else {
+        $siker = FALSE;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -20,7 +91,7 @@
             </div>
 
             <div class="input-box">
-                <label for="username-label">Felhasználónév<span class="required">*</span>:</label>
+                <label for="username-label">Felhasználónév<span class="required" >* (Minimum 5 karakter)</span>:</label>
                 <input type="text" id="username-label" name="username" placeholder="Add meg a felhasználóneved" required>
             </div>
 
@@ -35,13 +106,13 @@
             </div>
 
             <div class="input-box">
-                <label for="password-label">Jelszó<span class="required">*</span>:</label>
+                <label for="password-label">Jelszó<span class="required">* (Minimum 4 karakter)</span>:</label>
                 <input type="password" id="password-label" name="password" placeholder="Add meg egy jelszót" required>
             </div>
 
             <div class="input-box">
-                <label for="password-check-label">Jelszó ismét<span class="required">*</span>:</label>
-                <input type="password" id="password-check-label" placeholder="Add meg még egyszer a jelszót" required>
+                <label for="password-check-label">Jelszó ismét<span class="required">* (Minimum 4 karakter)</span>:</label>
+                <input type="password" id="password-check-label" name="passwordagain" placeholder="Add meg még egyszer a jelszót" required>
             </div>
         </div>
 
@@ -49,7 +120,7 @@
             <input type="radio" name="gender" id="dot-1" value="f">
             <input type="radio" name="gender" id="dot-2" value="n">
             <input type="radio" name="gender" id="dot-3" value="o">
-            <span class="gender-title">Nemed*</span>
+            <span class="gender-title">Nemed</span>
             <div class="category">
                 <label for="dot-1">
                     <span class="dot one"></span>
@@ -70,7 +141,7 @@
         </div>
 
         <div class="button">
-            <input type="submit" value="Regisztráció">
+            <input type="submit" name="regisztracio" value="Regisztráció">
         </div>
     </form>
     <form action="index.php?post=Bejelentkezes" method="post">
