@@ -1,4 +1,4 @@
-.body {
+.hatter {
     background-color: #1D1F20 ;
     color: white ;
 }
@@ -48,4 +48,17 @@
 .navbar a.active {
     background-color: #04AA6D;
     color: white;
+}
+.sor{
+    text-align: center !important;
+    width: 33%;
+}
+.szoveg{
+    text-align: center;
+}
+.myB{
+    color: black;
+}
+.tabla{
+    mso-cellspacing: 3px;
 }
