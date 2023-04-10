@@ -83,8 +83,7 @@
 </html>
 <?php
 if (isset($_POST['regisztracio'])){
-    $abs_path = __DIR__ . "/Felhasznalok.txt";
-    $file = fopen($abs_path, "a");
+    $file = fopen("../public/Felhasznalok.txt", "a");
     if($file !== false){
 
         $rows = file("Felhasznalok.txt");
@@ -97,8 +96,6 @@ if (isset($_POST['regisztracio'])){
         $password_hashed = password_hash($password, PASSWORD_DEFAULT);
         $gender = NULL;
         $hibak = [];
-
-        if (isset($_POST["regisztracio"])) {
 
             if (!isset($_POST["name"]) || trim($_POST["name"]) === "") {
                 $hibak[] = "A neved megadása kötelező!";
@@ -121,10 +118,10 @@ if (isset($_POST['regisztracio'])){
             if (isset($_POST["gender"])) {
                 $gender = $_POST["gender"];
             }
-            if (strlen($username) < 5){
+            if (strlen($username) > 5){
                 $hibak[] = "A felhasználónevednek legalább 5 karakterből kell állnia!";
             }
-            if (strlen($password) < 4){
+            if (strlen($password) > 4){
                 $hibak[] = "A jelszónak legalább 4 karakter hosszúnak kell lennie!";
             }
             if ($password !== $passwordagain) {
@@ -138,23 +135,22 @@ if (isset($_POST['regisztracio'])){
             } else {
                 $siker = FALSE;
             }
-        }
         foreach($rows as $row){
             $user = explode(",", $row);
             if($user[1] == $username || $user[2] == $email){
                 echo "Az adott email cím vagy felhasználónév már regisztrálva van!";
                 fclose($file);
                 exit();
+            }else{
+                $new_user = array($name, $username, $email, $number, $password_hashed, $gender);
+                $new_user_string = implode(",", $new_user);
+                fwrite($file, $new_user_string);
+                fclose($file);
+                echo "Sikeres regisztráció!";
             }
         }
-
-        $new_user = array($name, $username, $email, $number, $password_hashed, $gender);
-        $new_user_string = implode(",", $new_user);
-        fwrite($file, $new_user_string);
-        fclose($file);
-        echo "Sikeres regisztráció!";
-    } else {
-        echo "Hiba történt a fájl megnyitása során.";
     }
+} else {
+    echo "Hiba történt a fájl megnyitása során.";
 }
 ?>

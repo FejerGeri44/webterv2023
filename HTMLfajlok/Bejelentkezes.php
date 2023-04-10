@@ -14,7 +14,7 @@
         <div class="user-details">
             <div class="input-box">
                 <label for="username-label">Felhasználónév<span class="required">*</span>:</label>
-                <input type="text" id="username-label" placeholder="Add meg a felhasználóneved" required>
+                <input type="text" id="username-label" name="username" placeholder="Add meg a felhasználóneved" required>
             </div>
             <div class="input-box">
                 <label for="password-label">Jelszó<span class="required">*</span>:</label>
@@ -33,3 +33,30 @@
 </div>
 </body>
 </html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $file = fopen('../public/Felhasznalok.txt', 'r');
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $foundUser = false;
+
+    while (!feof($file)) {
+        $felhasznalok = fgets($file);
+        $useradatok = explode(',', $felhasznalok);
+        $hashedPassword = $useradatok[4];
+        $mentettusername = $useradatok[1];
+        if ($mentettusername === $username && password_verify($password, $hashedPassword)) {
+            fclose($file);
+            header('Location: Profil.php');
+            exit();
+        }
+        $foundUser = true;
+    }
+    fclose($file);
+
+    if ($foundUser === true) {
+        echo 'Hibás felhasználónevet vagy jelszót adtál meg!';
+    }
+}
+?>
