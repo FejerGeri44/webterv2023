@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Profil</title>
     <link rel="stylesheet" href="../public/CSSfajlok/Profil.css">
-    <link rel="icon" href="favicon.webp">
+    <link rel="icon" href="../public/favicon.webp">
 </head>
 <body>
 
@@ -31,6 +31,7 @@
     </ul>
 </div>
 <hr><br><br><br><br>
+
 <form action="Bejelentkezes.php" method="post">
     <div class="button">
         <input type="submit" value="Kijelentkezés">

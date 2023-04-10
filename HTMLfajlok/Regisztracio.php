@@ -15,23 +15,23 @@
             <div class="input-box">
                 <span class="details">Teljes név*</span>
                 <label>
-                    <input type="text" placeholder="Add meg a nevedet" name="name" required>
+                    <input type="text" placeholder="Add meg a nevedet" name="name" required <?php if (isset($_POST['name'])) echo $_POST['name']; ?>>
                 </label>
             </div>
 
             <div class="input-box">
                 <label for="username-label">Felhasználónév<span class="required" >* (Minimum 5 karakter)</span>:</label>
-                <input type="text" id="username-label" name="username" placeholder="Add meg a felhasználóneved" required>
+                <input type="text" id="username-label" name="username" placeholder="Add meg a felhasználóneved" required <?php if (isset($_POST['username'])) echo $_POST['username']; ?>>
             </div>
 
             <div class="input-box">
                 <label for="email-label">E-mail cím:<span class="required">*</span></label>
-                <input type="email" id="email-label" name="email" placeholder="Add meg az email címedet" required>
+                <input type="email" id="email-label" name="email" placeholder="Add meg az email címedet" required <?php if (isset($_POST['email'])) echo $_POST['email']; ?>>
             </div>
 
             <div class="input-box">
                 <label for="number-label">Telefonszám:<span class="required">*</span></label>
-                <input type="tel" id="number-label" name="number" placeholder="Add meg a telefonszámodat" required>
+                <input type="tel" id="number-label" name="number" placeholder="Add meg a telefonszámodat" required <?php if (isset($_POST['number'])) echo $_POST['number']; ?>>
             </div>
 
             <div class="input-box">
@@ -46,9 +46,9 @@
         </div>
 
         <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1" value="f">
-            <input type="radio" name="gender" id="dot-2" value="n">
-            <input type="radio" name="gender" id="dot-3" value="o">
+            <input type="radio" name="gender" id="dot-1" value="f" <?php if (isset($_POST['nem']) && $_POST['nem'] === 'F') echo 'checked'; ?>>
+            <input type="radio" name="gender" id="dot-2" value="n" <?php if (isset($_POST['nem']) && $_POST['nem'] === 'F') echo 'checked'; ?>>
+            <input type="radio" name="gender" id="dot-3" value="o" <?php if (isset($_POST['nem']) && $_POST['nem'] === 'F') echo 'checked'; ?>>
             <span class="gender-title">Nemed</span>
             <div class="category">
                 <label for="dot-1">
@@ -82,75 +82,83 @@
 </body>
 </html>
 <?php
-if (isset($_POST['regisztracio'])){
-    $file = fopen("../public/Felhasznalok.txt", "a");
-    if($file !== false){
+session_start();
+$users = loadUsers("Felhasznalok.txt");
+$bakik = [];
 
-        $rows = file("Felhasznalok.txt");
-        $name = $_POST["name"];
-        $username = $_POST["username"];
-        $email = $_POST["email"];
-        $number = $_POST["number"];
-        $password = $_POST["password"];
-        $passwordagain = $_POST["passwordagain"];
-        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-        $gender = NULL;
-        $hibak = [];
+if (isset($_POST["regisztracio"])) {
 
-            if (!isset($_POST["name"]) || trim($_POST["name"]) === "") {
-                $hibak[] = "A neved megadása kötelező!";
-            }
-            if (!isset($_POST["username"]) || trim($_POST["username"]) === "") {
-                $hibak[] = "A felhasználónév megadása kötelező!";
-            }
-            if (!isset($_POST["email"]) || trim($_POST["email"]) === "") {
-                $hibak[] = "Az email címed megadása kötelező!";
-            }
-            if (!isset($_POST["number"]) || trim($_POST["number"]) === "") {
-                $hibak[] = "A telefonszámod megadása kötelező!";
-            }
-            if (!isset($_POST["password"]) || trim($_POST["password"]) === "" || !isset($_POST["passwordagain"]) || trim($_POST["passwordagain"]) === "") {
-                $hibak[] = "A jelszó és az ellenőrző jelszó megadása kötelező!";
-            }
-            if (!isset($_POST["gender"]) || trim($_POST["gender"]) === "") {
-                $hibak[] = "A nemed megadása kötelező!";
-            }
-            if (isset($_POST["gender"])) {
-                $gender = $_POST["gender"];
-            }
-            if (strlen($username) > 5){
-                $hibak[] = "A felhasználónevednek legalább 5 karakterből kell állnia!";
-            }
-            if (strlen($password) > 4){
-                $hibak[] = "A jelszónak legalább 4 karakter hosszúnak kell lennie!";
-            }
-            if ($password !== $passwordagain) {
-                $hibak[] = "A jelszó és az ellenőrző jelszó nem ugyanaz!";
-            }
-            if (strlen($number) !== 10) {
-                $hibak[] = "A telefonszámodnak 10 karakternek kell lennie!";
-            }
-            if (count($hibak) === 0) {
-                $siker = TRUE;
-            } else {
-                $siker = FALSE;
-            }
-        foreach($rows as $row){
-            $user = explode(",", $row);
-            if($user[1] == $username || $user[2] == $email){
-                echo "Az adott email cím vagy felhasználónév már regisztrálva van!";
-                fclose($file);
-                exit();
-            }else{
-                $new_user = array($name, $username, $email, $number, $password_hashed, $gender);
-                $new_user_string = implode(",", $new_user);
-                fwrite($file, $new_user_string);
-                fclose($file);
-                echo "Sikeres regisztráció!";
-            }
-        }
+    $name = $_POST["name"];
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $number = $_POST["number"];
+    $password = $_POST["password"];
+    $passwordagain = $_POST["passwordagain"];
+    $gender = NULL;
+
+    if (!isset($_POST["name"]) || trim($_POST["name"]) === "")
+        $bakik[] = "A neved megadása kötelező!";
+
+    if (!isset($_POST["username"]) || trim($_POST["username"]) === "")
+        $bakik[] = "A felhasználóneved megadása lötelező!";
+
+    if (!isset($_POST["email"]) || trim($_POST["email"]) === "")
+        $bakik[] = "Az email címed megadása kötelező!";
+
+    if (!isset($_POST["number"]) || trim($_POST["number"]) === "")
+        $bakik[] = "A telefonszámod kötelező!";
+
+    if (!isset($_POST["password"]) || trim($_POST["password"]) === "" || !isset($_POST["passwordagain"]) || trim($_POST["passwordagain"]) === "")
+        $bakik[] = "A jelszó és az ellenőrző jelszó megadása kötelező!";
+
+    if (isset($_POST["gender"]))
+        $gender = $_POST["gender"];
+
+    if (strlen($username) < 5)
+        $bakik[] = "A felhasználónevednek legalább 5 karakter hosszúnak kell lennie!";
+
+    if ($password !== $passwordagain)
+        $bakik[] = "A jelszó és az ellenőrző jelszó nem egyezik meg!";
+
+    foreach ($users as $user) {
+        if ($user["username"] === $username)
+            $bakik[] = "A felhasználónév már foglalt!";
     }
-} else {
-    echo "Hiba történt a fájl megnyitása során.";
+
+    if (count($bakik) === 0) {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender];
+        saveUsers("Felhasznalok.txt", $users);
+        $successful = TRUE;
+        header("Location: Bejelentkezes.php");
+    } else {
+        $unsuccessful = FALSE;
+    }
+}
+
+function saveUsers($path, $users) {
+    $file = fopen($path, "w");
+    if (!$file)
+      die("Baki: A fájl megnyitása nem sikerült!");
+
+    foreach($users as $user) {
+      $serialized_user = serialize($user);
+      fwrite($file, $serialized_user . "\n");
+    }
+    fclose($file);
+  }
+function loadUsers($path) {
+    $users = [];
+
+    $file = fopen($path, "r");
+    if (!$file)
+        die("Baki: A fájl megnyitása nem sikerült!");
+
+    while (($line = fgets($file)) !== FALSE) {
+        $user = unserialize($line);
+        $users[] = $user;
+    }
+    fclose($file);
+    return $users;
 }
 ?>

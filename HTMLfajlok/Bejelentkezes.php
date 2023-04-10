@@ -33,30 +33,3 @@
 </div>
 </body>
 </html>
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $file = fopen('../public/Felhasznalok.txt', 'r');
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $foundUser = false;
-
-    while (!feof($file)) {
-        $felhasznalok = fgets($file);
-        $useradatok = explode(',', $felhasznalok);
-        $hashedPassword = $useradatok[4];
-        $mentettusername = $useradatok[1];
-        if ($mentettusername === $username && password_verify($password, $hashedPassword)) {
-            fclose($file);
-            header('Location: Profil.php');
-            exit();
-        }
-        $foundUser = true;
-    }
-    fclose($file);
-
-    if ($foundUser === true) {
-        echo 'Hibás felhasználónevet vagy jelszót adtál meg!';
-    }
-}
-?>
