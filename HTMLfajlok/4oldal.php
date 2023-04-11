@@ -31,7 +31,7 @@
 </p><br>
 
 <figure class="slide">
-    <img src="../Képek/katonak.jpg" alt="katonak"/>
+    <img src="../Képek/oroszok.jpg" alt="katonak"/>
     <figcaption>
         <h3>Munkás-paraszt Vörös Hadsereg</h3>
         <p>A Vörös Hadsereg a Szovjetunió fegyveres erőinek része volt 1918 és 1946 között.</p><a href="https://hu.wikipedia.org/wiki/Munk%C3%A1s-paraszt_V%C3%B6r%C3%B6s_Hadsereg" target="_blank" class="read-more">Bővebben</a>
