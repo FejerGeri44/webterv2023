@@ -29,5 +29,6 @@ if (isset($_POST["bejelentkezes"])) {
             echo "<li>$baki</li>";
         }
         echo "</ul>";
+        echo "<form action='Bejelentkezes.php' method='post'><input type='submit' value='Vissza'></form>";
     }
 }

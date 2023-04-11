@@ -32,6 +32,25 @@
 </div>
 <hr><br><br><br><br>
 
+<form method="POST" action="usermodositas.php">
+    <label for="name">Név:</label>
+    <input type="text" id="name" name="name" placeholder="Új név"><br><br>
+
+    <label for="username">Felhasználónév:</label>
+    <input type="text" id="username" name="username" placeholder="Új felhasználónév"><br><br>
+
+    <label for="email">E-mail cím:</label>
+    <input type="email" id="email" name="email" placeholder="A regisztrált email címed" required><br><br>
+
+    <label for="phone">Telefonszám:</label>
+    <input type="tel" id="phone" name="number" placeholder="új telefonszám"><br><br>
+
+    <label for="password">Jelszó:</label>
+    <input type="password" id="password" name="password" placeholder="Új jelszó"><br><br>
+
+    <input type="submit" value="Mentés">
+</form>
+
 <form action="Bejelentkezes.php" method="post">
     <div class="button">
         <input type="submit" value="Kijelentkezés">
