@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="../public/CSSfajlok/altalanos.css">
     <link rel="icon" href="../public/favicon.webp">
 </head>
-<body>
-
-
+<body class="hatter">
 <div class="navbar">
     <ul>
         <li><a href="Quiz.php">Quiz</a></li>
