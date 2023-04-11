@@ -1,2 +1,1 @@
-a:6:{s:4:"name";s:12:"Csille Kevin";s:8:"username";s:7:"Dreager";s:5:"email";s:19:"csillek99@gmail.com";s:6:"number";s:11:"06306301477";s:8:"password";s:60:"$2y$10$uwU7Y3joo25sYMpJq/OOK.3U8eIf2fujUjFLwqWTxpnedRzxruwbW";s:6:"gender";s:1:"f";}
-a:6:{s:4:"name";s:12:"Kevin Csille";s:8:"username";s:8:"Dreager0";s:5:"email";s:21:"csillek0223@gmail.com";s:6:"number";s:11:"06306301478";s:8:"password";s:60:"$2y$10$nfbIfGIn82mQZPG8.bTUFOz4HA4w73Q5Pa38iHBzOEVydb72N9mXS";s:6:"gender";s:1:"f";}
+a:6:{s:4:"name";s:13:"Fejér Gergő";s:8:"username";s:10:"FejerGergo";s:5:"email";s:23:"fejer.gergo44@gmail.com";s:6:"number";s:10:"0636948655";s:8:"password";s:60:"$2y$10$qMO48B85laZlTV5RsKGQQOIg7kMxnEyB7cNKOUb.FBVwU5.j/9qvG";s:6:"gender";s:1:"f";}

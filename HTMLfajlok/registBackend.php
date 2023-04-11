@@ -1,4 +1,5 @@
 <?php
+include "functions.php";
 session_start();
 $users = loadUsers("Felhasznalok.txt");
 $bakik = [];
@@ -34,6 +35,12 @@ if (isset($_POST["regisztracio"])) {
     if (strlen($username) < 5)
         $bakik[] = "A felhasználónevednek legalább 5 karakter hosszúnak kell lennie!";
 
+    if (strlen($password) < 4)
+        $bakik[] = "A jelszónak legalább 4 karakter hosszúnak kell lennie!";
+
+    if (strlen($passwordagain) < 4)
+        $bakik[] = "Az ellenőrző jelszónak legalább 4 karakter hosszúnak kell lennie!";
+
     if ($password !== $passwordagain)
         $bakik[] = "A jelszó és az ellenőrző jelszó nem egyezik meg!";
 
@@ -47,38 +54,15 @@ if (isset($_POST["regisztracio"])) {
         $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender];
         saveUsers("Felhasznalok.txt", $users);
         $successful = TRUE;
-        header("Location: Profil.php");
+        header("Location: Bejelentkezes.php");
     } else {
+        if (count($bakik) > 0) {
+            echo "<ul>";
+            foreach ($bakik as $baki) {
+                echo "<li>$baki</li>";
+            }
+            echo "</ul>";
+        }
         $unsuccessful = FALSE;
-        header("Location: Regisztracio.php");
     }
 }
-
-function saveUsers($path, $users) {
-    $file = fopen($path, "w");
-    if (!$file)
-        die("Baki: A fájl megnyitása nem sikerült!");
-
-    foreach($users as $user) {
-        $serialized_user = serialize($user);
-        fwrite($file, $serialized_user . "\n");
-    }
-    fclose($file);
-}
-function loadUsers($path) {
-    $users = [];
-
-    $file = fopen($path, "r");
-    if (!$file)
-        die("Baki: A fájl megnyitása nem sikerült!");
-
-    while (($line = fgets($file)) !== FALSE) {
-        $user = unserialize($line);
-        $users[] = $user;
-    }
-    fclose($file);
-    return $users;
-}
-
-
-

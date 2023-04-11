@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <div class="title">Bejelentkezés</div>
-    <form action="Profil.php" method="post">
+    <form action="bejelentkezesbackend.php" method="post">
         <div class="user-details">
             <div class="input-box">
                 <label for="username-label">Felhasználónév<span class="required">*</span>:</label>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="button">
-            <input type="submit" value="Bejelentkezés">
+            <input type="submit" name="bejelentkezes" value="Bejelentkezés">
         </div>
     </form>
     <form action="Regisztracio.php" method="post">
