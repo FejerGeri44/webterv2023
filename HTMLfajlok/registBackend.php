@@ -65,6 +65,7 @@ if (isset($_POST["regisztracio"])) {
                 echo "<li>$baki</li>";
             }
             echo "</ul>";
+            echo "<form action='Regisztracio.php' method='post'><input type='submit' value='Vissza a regisztrációra'></form>";
         }
         $unsuccessful = FALSE;
     }
