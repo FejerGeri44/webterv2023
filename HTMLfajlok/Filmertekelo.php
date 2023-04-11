@@ -36,20 +36,32 @@
         </td>
     </tr>
     <tr>
-        <td>
-            <div id="Hitler_career" class="sor">
+        <td class="sor">
+            <div id="Hitler_career" >
                 <?php
-                for ($i=0; $i<5;$i++){
-                    echo "<span class='glyphicon glyphicon-star-empty film-rating-stars Hitler_career-rating-".($i+1)."'></span>";
+                    for ($i=0; $i<5;$i++){
+                        echo "<span class='glyphicon glyphicon-star-empty career-rating-stars Hitler_career-rating-".($i+1)."'></span>";
                 }
                 ?>
             </div>
         </td>
         <td class="sor">
-
+            <div id="szinesben">
+                <?php
+                    for ($i=0; $i<5; $i++) {
+                        echo "<span class='glyphicon glyphicon-star-empty szinesben-rating-stars szinesben-rating-".($i+1)."'></span>";
+                    }
+                ?>
+            </div>
         </td>
         <td class="sor">
-
+            <div id="downfall">
+                <?php
+                for ($i=0; $i<5; $i++) {
+                    echo "<span class='glyphicon glyphicon-star-empty downfall-rating-stars downfall-rating-".($i+1)."'></span>";
+                }
+                ?>
+            </div>
         </td>
     </tr>
     <tr>
@@ -80,37 +92,33 @@
         <input type="submit" value="Vissza a profilra">
     </div>
     <script>
-        function handleRatings(event){
+        function handleRating1(event){
             var classes = event.target.className.split(" ");
             var number = classes[3].split("-")[2];
-            console.log("ajax.call");
             jQuery.ajax({
                 url:"../Ajax/ratings.php",
                 type:"post",
-                data: {name:"filcim", num:number},
+                data: {name:"filmcim", num:number},
                 success:function (res){
                     if(res === "success"){
                         let num = Number(number);
                         document.getElementById("Hitler_career").innerHTML="";
                         for(let i=1; i<=num;i++) {
                             let newSpan = document.createElement("span");
-                            newSpan.setAttribute("class","glyphicon glyphicon-star film-rating-stars Hitler_career-rating-" + i);
+                            newSpan.setAttribute("class","glyphicon glyphicon-star career-rating-stars Hitler_career-rating-" + i);
                             document.getElementById("Hitler_career").appendChild(newSpan);
-                            //document.getElementsByClassName("Hitler_career-rating-" + i)[0].className.replace("-empty", "");
                         }
                         console.log(num<5);
                         if(num<5) {
                             let poz = (num+1);
-                            console.log(poz);
                             while(poz<=5) {
-                                console.log("a");
                                 let newSpan = document.createElement("span");
-                                newSpan.setAttribute("class", "glyphicon glyphicon-star-empty film-rating-stars Hitler_career-rating-" + poz);
+                                newSpan.setAttribute("class", "glyphicon glyphicon-star-empty career-rating-stars Hitler_career-rating-" + poz);
                                 document.getElementById("Hitler_career").appendChild(newSpan);
                                 poz++;
                             }
                         }
-                        $(".film-rating-stars").click(handleRatings);
+                        $(".career-rating-stars").click(handleRating1);
                     }else{
                         alert(res);
                     }
@@ -119,7 +127,85 @@
         }
 
         $(document).ready(function (){
-            $(".film-rating-stars").click(handleRatings);
+            $(".career-rating-stars").click(handleRating1);
+        });
+    </script>
+    <script>
+        function handleRating2(event){
+            var classes = event.target.className.split(" ");
+            var number = classes[3].split("-")[2];
+            jQuery.ajax({
+                url:"../Ajax/ratings.php",
+                type:"post",
+                data: {name:"filmcim", num:number},
+                success:function (res){
+                    if(res === "success"){
+                        let num = Number(number);
+                        document.getElementById("szinesben").innerHTML="";
+                        for(let i=1; i<=num;i++) {
+                            let newSpan = document.createElement("span");
+                            newSpan.setAttribute("class","glyphicon glyphicon-star szinesben-rating-stars szinesben-rating-" + i);
+                            document.getElementById("szinesben").appendChild(newSpan);
+                        }
+                        console.log(num<5);
+                        if(num<5) {
+                            let poz = (num+1);
+                            while(poz<=5) {
+                                let newSpan = document.createElement("span");
+                                newSpan.setAttribute("class", "glyphicon glyphicon-star-empty szinesben-rating-stars szinesben-rating-" + poz);
+                                document.getElementById("szinesben").appendChild(newSpan);
+                                poz++;
+                            }
+                        }
+                        $(".szinesben-rating-stars").click(handleRating2);
+                    }else{
+                        alert(res);
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function (){
+            $(".szinesben-rating-stars").click(handleRating2);
+        });
+    </script>
+    <script>
+        function handleRating3(event){
+            var classes = event.target.className.split(" ");
+            var number = classes[3].split("-")[2];
+            jQuery.ajax({
+                url:"../Ajax/ratings.php",
+                type:"post",
+                data: {name:"filmcim", num:number},
+                success:function (res){
+                    if(res === "success"){
+                        let num = Number(number);
+                        document.getElementById("downfall").innerHTML="";
+                        for(let i=1; i<=num;i++) {
+                            let newSpan = document.createElement("span");
+                            newSpan.setAttribute("class","glyphicon glyphicon-star downfall-rating-stars downfall-rating-" + i);
+                            document.getElementById("downfall").appendChild(newSpan);
+                        }
+                        console.log(num<5);
+                        if(num<5) {
+                            let poz = (num+1);
+                            while(poz<=5) {
+                                let newSpan = document.createElement("span");
+                                newSpan.setAttribute("class", "glyphicon glyphicon-star-empty downfall-rating-stars downfall-rating-" + poz);
+                                document.getElementById("downfall").appendChild(newSpan);
+                                poz++;
+                            }
+                        }
+                        $(".downfall-rating-stars").click(handleRating3);
+                    }else{
+                        alert(res);
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function (){
+            $(".downfall-rating-stars").click(handleRating3);
         });
     </script>
 </body>

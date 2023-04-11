@@ -47,9 +47,10 @@ if (isset($_POST["regisztracio"])) {
         $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender];
         saveUsers("Felhasznalok.txt", $users);
         $successful = TRUE;
-        header("Location: Bejelentkezes.php");
+        header("Location: Profil.php");
     } else {
         $unsuccessful = FALSE;
+        header("Location: Regisztracio.php");
     }
 }
 
@@ -63,7 +64,6 @@ function saveUsers($path, $users) {
         fwrite($file, $serialized_user . "\n");
     }
     fclose($file);
-    header("1oldal.php");
 }
 function loadUsers($path) {
     $users = [];
@@ -79,4 +79,6 @@ function loadUsers($path) {
     fclose($file);
     return $users;
 }
+
+
 
