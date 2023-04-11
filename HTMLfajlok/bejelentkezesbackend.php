@@ -18,7 +18,6 @@ if (isset($_POST["bejelentkezes"])) {
 
         foreach ($users as $user) {
             if ($user["username"] === $username && password_verify($password, $user["password"])) {
-                $_SESSION["user"] = $user;
                 header("Location: Profil.php");
             }
         }
