@@ -32,24 +32,40 @@
 </div>
 <hr><br><br><br><br>
 
-<form method="POST" action="usermodositas.php">
-    <label for="name">Név:</label>
-    <input type="text" id="name" name="name" placeholder="Új név"><br><br>
+<div class="ablak">
+    <div class="title">Adatmódosítás</div>
+    <form action="usermodositas.php" method="post">
+        <div class="adatok">
 
-    <label for="username">Felhasználónév:</label>
-    <input type="text" id="username" name="username" placeholder="Új felhasználónév"><br><br>
+            <div class="input">
+                <label><span class="adat">Email cím</span></label>
+                <label for="email"></label><input type="email" id="email" name="email" placeholder="A regisztrált email címed" required>
+            </div>
 
-    <label for="email">E-mail cím:</label>
-    <input type="email" id="email" name="email" placeholder="A regisztrált email címed" required><br><br>
+            <div class="input">
+                <label><span class="adat">Név</span></label>
+                <label for="name"></label><input type="text" id="name" name="name" placeholder="Új Név">
+            </div>
 
-    <label for="phone">Telefonszám:</label>
-    <input type="tel" id="phone" name="number" placeholder="új telefonszám"><br><br>
+            <div class="input">
+                <label><span class="adat">Felhasználónév</span></label>
+                <label for="username"></label><input type="text" id="username" name="username" placeholder="Új felhasználónév">
+            </div>
 
-    <label for="password">Jelszó:</label>
-    <input type="password" id="password" name="password" placeholder="Új jelszó"><br><br>
+            <div class="input">
+                <label><span class="adat">Telefonszám</span></label>
+                <label for="number"></label><input type="tel" id="number" name="number" placeholder="Új telefonszám">
+            </div>
 
-    <input type="submit" value="Mentés">
-</form>
+            <div class="input">
+                <label><span class="adat">Jelszó</span></label>
+                <label for="password"></label><input type="password" id="password" name="password" placeholder="Új jelszó">
+            </div>
+        </div>
+        <input type="submit" value="Mentés">
+    </form>
+</div>
+
 
 <form action="Bejelentkezes.php" method="post">
     <div class="button">

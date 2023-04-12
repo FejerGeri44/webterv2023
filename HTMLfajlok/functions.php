@@ -5,7 +5,7 @@ function saveUsers($path, $users) {
         die("Baki: A fájl megnyitása nem sikerült!");
     }
     foreach($users as $user) {
-        $sor = $user["name"] . "," . $user["username"] . "," . $user["email"] . "," . $user["number"] . "," . $user["password"] . "," . $user["gender"] . "\n";
+        $sor = $user["name"] . "," . $user["username"] . "," . $user["email"] . "," . $user["number"] . "," . $user["password"] . "," . $user["gender"] . "," . $user["avatar"] . "," . $user["film1"] . "," . $user["film2"] . "," . $user["film3"] . "\n";
         fwrite($file, $sor);
     }
     fclose($file);
@@ -28,6 +28,10 @@ function loadUsers($path) {
                 "number" => $user[3],
                 "password" => $user[4],
                 "gender" => $user[5],
+                "avatar" => $user[6],
+                "film1" => $user[7],
+                "film2" => $user[8],
+                "film3" => $user[9],
             ];
         }
     }

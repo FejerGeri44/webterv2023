@@ -54,7 +54,7 @@ if (isset($_POST["regisztracio"])) {
 
     if (count($bakik) === 0) {
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender];
+        $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender, "avatar" => "avatar.jpg", "film1" => $film1, "film2" => $film2, "film3" => $film3];
         saveUsers("Felhasznalok.txt", $users);
         $successful = TRUE;
         header("Location: Bejelentkezes.php");
