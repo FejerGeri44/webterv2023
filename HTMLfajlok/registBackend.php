@@ -13,9 +13,9 @@ if (isset($_POST["regisztracio"])) {
     $password = $_POST["password"];
     $passwordagain = $_POST["passwordagain"];
     $gender = NULL;
-    $film1 = 0;
-    $film2 = 0;
-    $film3 = 0;
+    $film1=$_POST["0"];
+    $film2=$_POST["0"];
+    $film3=$_POST["0"];
 
     if (!isset($_POST["name"]) || trim($_POST["name"]) === "")
         $bakik[] = "A neved megadása kötelező!";
@@ -70,3 +70,4 @@ if (isset($_POST["regisztracio"])) {
         $unsuccessful = FALSE;
     }
 }
+
