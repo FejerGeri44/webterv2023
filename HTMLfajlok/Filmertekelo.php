@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="../public/CSSfajlok/altalanos.css">
     <link rel="icon" href="../public/favicon.webp">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body class="hatter">
 <div class="navbar">
@@ -39,28 +36,25 @@
         <td class="sor">
             <div id="Hitler_career" >
                 <?php
-                    for ($i=0; $i<5;$i++){
-                        echo "<span class='glyphicon glyphicon-star-empty career-rating-stars Hitler_career-rating-".($i+1)."'></span>";
-                }
-                ?>
+                    for ($i=0; $i<5;$i++):?>
+                        <span class='career-rating-stars Hitler_career-rating-<?php echo ($i+1);?>'><img src="../Képek/star-empty.jpg" class="ratingImages"  alt="empty-star"/></span>
+                <?php endfor;?>
             </div>
         </td>
         <td class="sor">
             <div id="szinesben">
                 <?php
-                    for ($i=0; $i<5; $i++) {
-                        echo "<span class='glyphicon glyphicon-star-empty szinesben-rating-stars szinesben-rating-".($i+1)."'></span>";
-                    }
-                ?>
+                for ($i=0; $i<5;$i++):?>
+                    <span class='szinesben-rating-stars Hitler_career-rating-<?php echo ($i+1);?>'><img src="../Képek/star-empty.jpg" class="ratingImages" alt="empty-star"/></span>
+                <?php endfor;?>
             </div>
         </td>
         <td class="sor">
             <div id="downfall">
                 <?php
-                for ($i=0; $i<5; $i++) {
-                    echo "<span class='glyphicon glyphicon-star-empty downfall-rating-stars downfall-rating-".($i+1)."'></span>";
-                }
-                ?>
+                for ($i=0; $i<5;$i++):?>
+                    <span class='downfall-rating-stars Hitler_career-rating-<?php echo ($i+1);?>'><img src="../Képek/star-empty.jpg" class="ratingImages" alt="empty-star"/></span>
+                <?php endfor;?>
             </div>
         </td>
     </tr>
@@ -93,8 +87,8 @@
     </div>
     <script>
         function handleRating1(event){
-            var classes = event.target.className.split(" ");
-            var number = classes[3].split("-")[2];
+            var classes = event.target.parentNode.className.split(" ");
+            var number = classes[1].split("-")[2];
             jQuery.ajax({
                 url:"../Ajax/ratings.php",
                 type:"post",
@@ -105,15 +99,22 @@
                         document.getElementById("Hitler_career").innerHTML="";
                         for(let i=1; i<=num;i++) {
                             let newSpan = document.createElement("span");
-                            newSpan.setAttribute("class","glyphicon glyphicon-star career-rating-stars Hitler_career-rating-" + i);
+                            newSpan.setAttribute('class', "career-rating-stars Hitler_career-rating-" + i);
+                            let newImage = document.createElement("img");
+                            newImage.setAttribute('class','ratingImages');
+                            newImage.setAttribute('src', '../Képek/star.jpg');
+                            newSpan.appendChild(newImage);
                             document.getElementById("Hitler_career").appendChild(newSpan);
                         }
-                        console.log(num<5);
                         if(num<5) {
                             let poz = (num+1);
                             while(poz<=5) {
                                 let newSpan = document.createElement("span");
-                                newSpan.setAttribute("class", "glyphicon glyphicon-star-empty career-rating-stars Hitler_career-rating-" + poz);
+                                newSpan.setAttribute("class", "career-rating-stars Hitler_career-rating-" + poz);
+                                let newImage = document.createElement("img");
+                                newImage.setAttribute('class','ratingImages');
+                                newImage.setAttribute('src', '../Képek/star-empty.jpg');
+                                newSpan.appendChild(newImage);
                                 document.getElementById("Hitler_career").appendChild(newSpan);
                                 poz++;
                             }
@@ -132,8 +133,8 @@
     </script>
     <script>
         function handleRating2(event){
-            var classes = event.target.className.split(" ");
-            var number = classes[3].split("-")[2];
+            var classes = event.target.parentNode.className.split(" ");
+            var number = classes[1].split("-")[2];
             jQuery.ajax({
                 url:"../Ajax/ratings.php",
                 type:"post",
@@ -144,15 +145,22 @@
                         document.getElementById("szinesben").innerHTML="";
                         for(let i=1; i<=num;i++) {
                             let newSpan = document.createElement("span");
-                            newSpan.setAttribute("class","glyphicon glyphicon-star szinesben-rating-stars szinesben-rating-" + i);
+                            newSpan.setAttribute("class","szinesben-rating-stars szinesben-rating-" + i);
+                            let newImage = document.createElement("img");
+                            newImage.setAttribute('class','ratingImages');
+                            newImage.setAttribute('src', '../Képek/star.jpg');
+                            newSpan.appendChild(newImage);
                             document.getElementById("szinesben").appendChild(newSpan);
                         }
-                        console.log(num<5);
                         if(num<5) {
                             let poz = (num+1);
                             while(poz<=5) {
                                 let newSpan = document.createElement("span");
-                                newSpan.setAttribute("class", "glyphicon glyphicon-star-empty szinesben-rating-stars szinesben-rating-" + poz);
+                                newSpan.setAttribute("class", "szinesben-rating-stars szinesben-rating-" + poz);
+                                let newImage = document.createElement("img");
+                                newImage.setAttribute('class','ratingImages');
+                                newImage.setAttribute('src', '../Képek/star-empty.jpg');
+                                newSpan.appendChild(newImage);
                                 document.getElementById("szinesben").appendChild(newSpan);
                                 poz++;
                             }
@@ -171,8 +179,8 @@
     </script>
     <script>
         function handleRating3(event){
-            var classes = event.target.className.split(" ");
-            var number = classes[3].split("-")[2];
+            var classes = event.target.parentNode.className.split(" ");
+            var number = classes[1].split("-")[2];
             jQuery.ajax({
                 url:"../Ajax/ratings.php",
                 type:"post",
@@ -183,15 +191,22 @@
                         document.getElementById("downfall").innerHTML="";
                         for(let i=1; i<=num;i++) {
                             let newSpan = document.createElement("span");
-                            newSpan.setAttribute("class","glyphicon glyphicon-star downfall-rating-stars downfall-rating-" + i);
+                            newSpan.setAttribute("class","downfall-rating-stars downfall-rating-" + i);
+                            let newImage = document.createElement("img");
+                            newImage.setAttribute('class','ratingImages');
+                            newImage.setAttribute('src', '../Képek/star.jpg');
+                            newSpan.appendChild(newImage);
                             document.getElementById("downfall").appendChild(newSpan);
                         }
-                        console.log(num<5);
                         if(num<5) {
                             let poz = (num+1);
                             while(poz<=5) {
                                 let newSpan = document.createElement("span");
-                                newSpan.setAttribute("class", "glyphicon glyphicon-star-empty downfall-rating-stars downfall-rating-" + poz);
+                                newSpan.setAttribute("class", "downfall-rating-stars downfall-rating-" + poz);
+                                let newImage = document.createElement("img");
+                                newImage.setAttribute('class','ratingImages');
+                                newImage.setAttribute('src', '../Képek/star-empty.jpg');
+                                newSpan.appendChild(newImage);
                                 document.getElementById("downfall").appendChild(newSpan);
                                 poz++;
                             }
