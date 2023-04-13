@@ -23,14 +23,21 @@
     <p class="title">Profil</p>
 </div>
 <hr><hr>
-<div class="navbar">
+
+<div class="navbarka">
     <ul>
         <li><a href="Quiz.php">Quiz</a></li>
         <li><a href="Filmertekelo.php">Filmek</a></li>
         <li><a href="Chat.php">Chat</a></li>
     </ul>
 </div>
-<hr><br><br><br><br>
+<hr><br><br><br>
+
+<div class="kep">
+    <img id="myImage" src="../Képek/avatar.jpg" width="200" height="200" alt="profilkep">
+    <br><br>
+    <input type="file" onchange="changeImage(event)">
+</div>
 
 <div class="ablak">
     <div class="title">Adatmódosítás</div>
@@ -40,6 +47,7 @@
             <div class="input">
                 <label><span class="adat">Email cím</span></label>
                 <label for="email"></label><input type="email" id="email" name="email" placeholder="A regisztrált email címed" required>
+                <label><span class="adat">(Megadása kötelező)</span></label>
             </div>
 
             <div class="input">
@@ -66,13 +74,63 @@
     </form>
 </div>
 
-
 <form action="Bejelentkezes.php" method="post">
     <div class="button">
         <input type="submit" value="Kijelentkezés">
     </div>
 </form>
 <script>
+    function changeImage(event) {
+        let file = event.target.files[0];
+        let filename = file.name;
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function() {
+            let image = document.getElementById("myImage");
+            image.src = reader.result;
+            updateProfilePicture(filename);
+        }
+    }
+
+    function updateProfilePicture(filename) {
+        let users = [];
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                users = JSON.parse(this.responseText);
+                let currentUser = getCurrentUser(users);
+                if (currentUser != null) {
+                    currentUser.avatar = filename;
+                    writeToFile(users);
+                }
+            }
+        };
+        xhttp.open("GET", "Felhasznalok.txt", true);
+        xhttp.send();
+    }
+
+    function getCurrentUser(users) {
+        let currentUser = null;
+        let loggedInUser = localStorage.getItem("loggedInUser");
+        users.forEach(function(user) {
+            if (user.username === loggedInUser) {
+                currentUser = user;
+            }
+        });
+        return currentUser;
+    }
+
+    function writeToFile(users) {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log("File updated");
+            }
+        };
+        xhttp.open("POST", "updateFile.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("data=" + JSON.stringify(users));
+    }
     function setCookie(cname, cvalue, exdays) {
         const d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));

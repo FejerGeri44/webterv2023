@@ -50,3 +50,45 @@ body {
     background-color: #04AA6D;
     color: white;
 }
+.kep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.navbarka {
+    background-color: #333;
+    padding: 10px;
+    list-style: none;
+    margin-top: -10px;
+    width: 100%;
+    z-index:100;
+}
+.navbarka ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.navbarka li{
+    display: inline-block;
+}
+.navbarka a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.navbarka a:hover {
+    background-color: white;
+    color: black;
+}
+.navbarka a.active {
+    background-color: #04AA6D;
+    color: white;
+}
