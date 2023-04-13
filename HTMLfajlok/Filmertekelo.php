@@ -86,6 +86,12 @@
         <input type="submit" value="Vissza a profilra">
     </div>
     <script>
+        function myFunction() {
+            let person = prompt("Please enter your email:", "");
+        }
+        myFunction();
+
+
         function handleRating1(event){
             var classes = event.target.parentNode.className.split(" ");
             var number = classes[1].split("-")[2];
