@@ -1,1 +1,2 @@
-Gergő Fejér,FejerGergo,fejer.gergo44@gmail.com,0636948655,$2y$10$IRj.GQCzyRLbE.Pgmlh5HOyZGNr1cebeQ1lG7eQ5F807AmGr.NUt.,f
+Gergő Fejér,FejerGergo,fejer.gergo44@gmail.com,0636948655,$2y$10$IRj.GQCzyRLbE.Pgmlh5HOyZGNr1cebeQ1lG7eQ5F807AmGr.NUt.,f,,,,
+Csille Kevin,Dreager,csillek99@gmail.com,06306301477,$2y$10$yRYtXAtrS1IFRUzkKqDZoOAbk2OGIqAfQDFuuKaeI8iXJsRDakoI2,f,avatar.jpg,,,
