@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz</title>
-    <link rel="stylesheet" href="../public/CSSfajlok/altalanos.css">
+    <link rel="stylesheet" href="../public/CSSfajlok/Quiz.css">
     <link rel="icon" href="../public/favicon.webp">
 </head>
 <body class="hatter">
@@ -19,12 +19,12 @@
 </div>
 <hr><hr>
 
-<div class="container">
+<div class="ablak">
     <form action="Quizertekeles.php" method="post">
 
-        <div class="input">
-            <label><span class="adat">Email cím</span></label><br>
-            <label for="email"></label><input type="email" id="email" name="email" placeholder="A regisztrált email címed" required><br>
+        <div class="mid">
+            <label><h2><span class="adat">Email cím</span></h2></label><br>
+            <label for="email"></label><input class="option_email" id="email" type="email" name="email" placeholder="A regisztrált email címed" required><br>
             <label><span class="adat">(Megadása kötelező a quiz kitöltéséhez)</span></label>
         </div>
 
@@ -46,7 +46,7 @@
         <h2>2. Kérdés:</h2>
         <p>Minek köszönhetően halt meg Adolf Hitler?</p>
         <label>
-            <select name="masodik">
+            <select class="option_email" name="masodik">
                 <option value="default">Nem tudom :(</option>
                 <option value="Rage">Road rage</option>
                 <option value="Gumimaci">Mérges gumimacik</option>
@@ -170,14 +170,14 @@
             <input type="radio" id="9f" name="kilencedik" value="F">
             <label for="9f">Kína</label>
         </div>
-
+        <br>
         <input type="submit" name="submit" class="gomb" value="Küldés">
 
     </form>
 </div>
 <form action="Profil.php" method="post">
-    <div class="myB">
-        <input type="submit" class="gomb" value="Vissza a profilra">
+    <div>
+        <input type="submit" class="myB" value="Vissza a profilra">
     </div>
 </body>
 </html>
