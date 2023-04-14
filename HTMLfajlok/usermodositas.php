@@ -11,6 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lines = file("Felhasznalok.txt");
     $new_lines = array();
 
+    $baki = "";
+    if (!isset($_POST["email"]) || trim($_POST["email"]) === "")
+        $baki = "Az Email címed megadása kötelező az adatok módosításához!";
+
     foreach ($lines as $line) {
         $user = explode(",", $line);
         if (isset($user[2]) && $user[2] == $email) {
@@ -35,6 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    if ($baki !== ""){
+        echo $baki;
+    }
     if (!$letezik) {
         echo "A megadott email címhez nem tartozik felhasználó!";
     } else {

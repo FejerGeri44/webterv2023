@@ -34,14 +34,14 @@
 
 <div class="ablak">
     <div class="title">Adatmódosítás</div>
-    <br><br><br><br>
-
     <form action="usermodositas.php" method="post">
         <div class="adatok">
+
             <div class="input">
-                <label><span class="adat">Email cím*</span></label>
+                <label><span class="adat">Email cím</span></label>
                 <label for="email"></label><input type="email" id="email" name="email" placeholder="A regisztrált email címed" required>
             </div>
+
             <div class="input">
                 <label><span class="adat">Név</span></label>
                 <label for="name"></label><input type="text" id="name" name="name" placeholder="Új Név">
@@ -62,15 +62,14 @@
                 <label for="password"></label><input type="password" id="password" name="password" placeholder="Új jelszó">
             </div>
         </div>
-        <br><br>
-        <input class="button" type="submit" value="Mentés">
+        <input type="submit" value="Mentés">
     </form>
 </div>
-<br>
+
 
 <form action="Bejelentkezes.php" method="post">
-    <div>
-        <input class="button" type="submit" value="Kijelentkezés">
+    <div class="button">
+        <input type="submit" value="Kijelentkezés">
     </div>
 </form>
 <script>

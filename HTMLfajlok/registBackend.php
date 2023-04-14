@@ -18,7 +18,6 @@ if (isset($_POST["regisztracio"])) {
     $film3 = 0;
 
 
-
     if (!isset($_POST["name"]) || trim($_POST["name"]) === "")
         $bakik[] = "A neved megadása kötelező!";
 
