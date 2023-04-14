@@ -16,7 +16,7 @@ if (isset($_POST["regisztracio"])) {
     $film1 = 0;
     $film2 = 0;
     $film3 = 0;
-
+    $quizdefault = 0;
 
     if (!isset($_POST["name"]) || trim($_POST["name"]) === "")
         $bakik[] = "A neved megadása kötelező!";
@@ -55,7 +55,7 @@ if (isset($_POST["regisztracio"])) {
 
     if (count($bakik) === 0) {
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender, "avatar" => "avatar.jpg", "film1" => $film1, "film2" => $film2, "film3" => $film3];
+        $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender, "avatar" => "avatar.jpg", "film1" => $film1, "film2" => $film2, "film3" => $film3, "quizpontszam" => $quizdefault];
         saveUsers("Felhasznalok.txt", $users);
         $successful = TRUE;
         header("Location: Bejelentkezes.php");

@@ -22,6 +22,12 @@
 <div class="container">
     <form action="Quizertekeles.php" method="post">
 
+        <div class="input">
+            <label><span class="adat">Email cím</span></label><br>
+            <label for="email"></label><input type="email" id="email" name="email" placeholder="A regisztrált email címed" required><br>
+            <label><span class="adat">(Megadása kötelező a quiz kitöltéséhez)</span></label>
+        </div>
+
         <h2>1. Kérdés:</h2>
         <p>Mikor van Adolf Hitler Születésnapja?</p>
         <div>
