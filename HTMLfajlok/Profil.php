@@ -36,12 +36,12 @@
 <div class="kep">
     <img id="myImage" src="../Képek/avatar.jpg" alt="profilkep">
     <br><br>
-    <input type="file" onchange="changeImage(event)">
+    <input id="fileBtn" type="file" onchange="changeImage(event)">
 </div>
 
 <form action="Bejelentkezes.php" method="post">
     <div class="button">
-        <input type="submit" value="Kijelentkezés">
+        <input class="gomb" type="submit" value="Kijelentkezés">
     </div>
 </form>
 <script>
