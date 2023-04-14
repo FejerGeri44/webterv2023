@@ -176,7 +176,7 @@
     </form>
 </div>
 <form action="Profil.php" method="post">
-    <div>
+    <div class="mid">
         <input type="submit" class="myB" value="Vissza a profilra">
     </div>
 </body>

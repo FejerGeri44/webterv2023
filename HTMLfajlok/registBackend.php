@@ -67,6 +67,7 @@ if (isset($_POST["regisztracio"])) {
         saveUsers("Felhasznalok.txt", $users);
         $successful = TRUE;
         header("Location: Bejelentkezes.php");
+
     } else {
         if (count($bakik) > 0) {
             echo "<ul>";
@@ -79,4 +80,3 @@ if (isset($_POST["regisztracio"])) {
         $unsuccessful = FALSE;
     }
 }
-

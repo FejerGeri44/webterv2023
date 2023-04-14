@@ -39,46 +39,6 @@
     <input id="fileBtn" type="file" onchange="changeImage(event)">
 </div>
 
-<table>
-    <tr>
-        <th>Felhasználónév</th>
-        <th>Pontszám</th>
-    </tr>
-    <?php
-    $felhasznalok = file('Felhasznalok.txt', FILE_IGNORE_NEW_LINES);
-
-    $felhasznalok_adatok = array();
-
-    foreach ($felhasznalok as $felhasznalo) {
-        $adatok = explode(',', $felhasznalo);
-        $felhasznalok_adatok[] = array(
-            'name' => $adatok[0],
-            'username' => $adatok[1],
-            'email' => $adatok[2],
-            'number' => $adatok[3],
-            'password' => $adatok[4],
-            'gender' => $adatok[5],
-            'film1' => $adatok[6],
-            'film2' => $adatok[7],
-            'film3' => $adatok[8],
-            'avatar' => $adatok[9],
-            'pontszam' => $adatok[10]
-        );
-    }
-
-    usort($felhasznalok_adatok, function($a, $b) {
-        return $b['pontszam'] - $a['pontszam'];
-    });
-
-    for ($i = 0; $i < 3; $i++) {
-        echo '<tr>';
-        echo '<td>' . $felhasznalok_adatok[$i]['username'] . '</td>';
-        echo '<td>' . $felhasznalok_adatok[$i]['pontszam'] . '</td>';
-        echo '</tr>';
-    }
-    ?>
-</table>
-
 <form action="Bejelentkezes.php" method="post">
     <div class="button">
         <input class="gomb" type="submit" value="Kijelentkezés">

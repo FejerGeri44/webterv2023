@@ -1,3 +1,1 @@
-Fejér Gergő,FejerGergo,fejer.gergo44@gmail.com,0636948655,$2y$10$fcC.fBBTHtHR6xjUp/pR2e7n4GtTTS2WkLsRgS52.eOjvFZOuqoYe,f,avatar.jpg,0,0,0,9
-fejergergo,FejerGeri,feje.gergo44@gmail.com,0636948655,$2y$10$IgDfwnoiaImkJmyp5Fgm9.UAsasDJj7o.5nOlPGe7VX6JyLl5VyIi,f,avatar.jpg,0,0,0,4
-Fejér Geri,mannnn,fejer.gerg44@gmail.com,0636948655,$2y$10$djLNe9flYDZ.OQkTfEi7IemKjqRffdxeiAYjbvHpbIMaoIo3xptkG,f,avatar.jpg,0,0,0,0
+Fejér Gergő,FejerGergo,fejer.gergo44@gmail.com,0636948655,$2y$10$F355vwqWq1eIaTu..jj3N.mY/UhXc6Nod5m1VvY98PHy.32rITfCm,f,avatar.jpg,0,0,0,0
