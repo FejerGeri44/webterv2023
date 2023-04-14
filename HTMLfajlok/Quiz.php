@@ -11,7 +11,7 @@
     <ul>
         <li><a class="active" href="../HTMLfajlok/Quiz.php">Quiz</a></li>
         <li><a href="../HTMLfajlok/Filmertekelo.php">Filmek</a></li>
-        <li><a href="../HTMLfajlok/Modositas.php">Chat</a></li>
+        <li><a href="../HTMLfajlok/Modositas.php">Adatmódosítás</a></li>
     </ul>
 </div>
 <div class="container"><br>
@@ -49,13 +49,13 @@
             <label for="q8-c">Dinók</label>
         </div>
 
-        <input type="submit" value="Küldés">
+        <input type="submit" class="gomb" value="Küldés">
 
     </form>
 </div>
 <form action="Profil.php" method="post">
     <div class="myB">
-        <input type="submit" value="Vissza a profilra">
+        <input type="submit" class="gomb" value="Vissza a profilra">
     </div>
 </body>
 </html>

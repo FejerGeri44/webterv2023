@@ -12,7 +12,7 @@
     <ul>
         <li><a href="Quiz.php">Quiz</a></li>
         <li><a class="active" href="#">Filmek</a></li>
-        <li><a href="Modositas.php">Chat</a></li>
+        <li><a href="Modositas.php">Adatmódosítás</a></li>
     </ul>
 </div>
 <div class="container"><br>

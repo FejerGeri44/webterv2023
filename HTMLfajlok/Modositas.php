@@ -11,16 +11,16 @@
     <ul>
         <li><a href="Quiz.php">Quiz</a></li>
         <li><a href="Filmertekelo.php">Filmek</a></li>
-        <li><a class="active" href="Modositas.php">Chat</a></li>
+        <li><a class="active" href="Modositas.php">Adatmódosítás</a></li>
     </ul>
 </div>
+
 <div class="container"><br>
     <p class="title">Adatmódosítás</p>
 </div>
 <hr><hr>
 
 <div class="ablak">
-    <div class="title">Adatmódosítás</div>
     <form action="usermodositas.php" method="post">
         <div class="adatok">
 

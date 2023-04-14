@@ -28,7 +28,7 @@
     <ul>
         <li><a href="Quiz.php">Quiz</a></li>
         <li><a href="Filmertekelo.php">Filmek</a></li>
-        <li><a href="Modositas.php">Chat</a></li>
+        <li><a href="Modositas.php">Adatmódosítás</a></li>
     </ul>
 </div>
 <hr><br><br><br>
