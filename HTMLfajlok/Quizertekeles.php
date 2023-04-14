@@ -1,5 +1,6 @@
 <?php
 
+$email = $_POST['email'];
 $pontszam = 0;
 
 if (isset($_POST['submit'])) {
@@ -91,6 +92,20 @@ if (isset($_POST['submit'])) {
             $pontszam--;
         }
     }
+
+    $lines = file('Felhasznalok.txt');
+    $frissitettline = '';
+
+    foreach ($lines as $line) {
+        $user = explode(',', $line);
+        if ($user[2] == $email) {
+            $user[10] = $pontszam;
+            $line = implode(',', $user);
+        }
+        $frissitettline .= $line;
+    }
+
+    file_put_contents('Felhasznalok.txt', $frissitettline);
 
 }
 echo "Az elért pontszámod: " . $pontszam;
