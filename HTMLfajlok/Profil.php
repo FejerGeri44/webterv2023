@@ -34,7 +34,7 @@
 <hr><br><br><br>
 
 <div class="kep">
-    <img id="myImage" src="../Képek/avatar.jpg" width="200" height="200" alt="profilkep">
+    <img id="myImage" src="../Képek/avatar.jpg" alt="profilkep">
     <br><br>
     <input type="file" onchange="changeImage(event)">
 </div>

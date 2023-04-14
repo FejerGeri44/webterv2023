@@ -92,3 +92,7 @@ body {
     background-color: #04AA6D;
     color: white;
 }
+#myImage{
+    width: 200px;
+    height: 200px;
+}
