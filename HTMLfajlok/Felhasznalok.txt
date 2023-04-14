@@ -1,3 +1,3 @@
-Fejér Gergő,FejerGergo,fejer.gergo44@gmail.com,0636948655,$2y$10$kKDSjvRKNfCi2/vLS4xmtOlOuNGD/sAXbOepiExObrz81rsDSVELS,f,avatar.jpg,0,0,0,2
-fejergergo,FejerGeri,feje.gergo44@gmail.com,0636948655,$2y$10$NPieoNyhnYAQ5Rd63NyjxuH9lPu0x/yVy4DcAwQc4UdsUxU7bGoeq,f,avatar.jpg,0,0,0,0
-Fejér Károly,mannn,fejer.gergo44@gmail.com,0636948655,$2y$10$0/s7jQPTh8.cIgLChyUEV.DeOpQH/ti6gHlH6zut7d9BGAX0oXQsu,f,avatar.jpg,0,0,0,0
+Fejér Gergő,FejerGergo,fejer.gergo44@gmail.com,0636948655,$2y$10$fcC.fBBTHtHR6xjUp/pR2e7n4GtTTS2WkLsRgS52.eOjvFZOuqoYe,f,avatar.jpg,0,0,0,9
+fejergergo,FejerGeri,feje.gergo44@gmail.com,0636948655,$2y$10$IgDfwnoiaImkJmyp5Fgm9.UAsasDJj7o.5nOlPGe7VX6JyLl5VyIi,f,avatar.jpg,0,0,0,4
+Fejér Geri,mannnn,fejer.gerg44@gmail.com,0636948655,$2y$10$djLNe9flYDZ.OQkTfEi7IemKjqRffdxeiAYjbvHpbIMaoIo3xptkG,f,avatar.jpg,0,0,0,0

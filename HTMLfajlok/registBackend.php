@@ -53,6 +53,14 @@ if (isset($_POST["regisztracio"])) {
             $bakik[] = "A felhasználónév már foglalt!";
     }
 
+    $lines = file('Felhasznalok.txt');
+    foreach ($lines as $line) {
+        $user = explode(',', $line);
+        if ($user[2] == $email) {
+            $bakik[] = "Ezzel az email címmel már regisztráltak!";
+        }
+    }
+
     if (count($bakik) === 0) {
         $password = password_hash($password, PASSWORD_DEFAULT);
         $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender, "avatar" => "avatar.jpg", "film1" => $film1, "film2" => $film2, "film3" => $film3, "quizpontszam" => $quizdefault];
