@@ -86,17 +86,11 @@
         <input type="submit" value="Vissza a profilra">
     </div>
     <script>
-        function myFunction() {
-            let person = prompt("Please enter your email:", "");
-        }
-        myFunction();
-
-
         function handleRating1(event){
             var classes = event.target.parentNode.className.split(" ");
             var number = classes[1].split("-")[2];
             jQuery.ajax({
-                url:"../Ajax/ratings.php",
+                url:"ratings.php",
                 type:"post",
                 data: {name:"filmcim", num:number},
                 success:function (res){
@@ -136,13 +130,12 @@
         $(document).ready(function (){
             $(".career-rating-stars").click(handleRating1);
         });
-    </script>
-    <script>
+
         function handleRating2(event){
             var classes = event.target.parentNode.className.split(" ");
             var number = classes[1].split("-")[2];
             jQuery.ajax({
-                url:"../Ajax/ratings.php",
+                url:"ratings.php",
                 type:"post",
                 data: {name:"filmcim", num:number},
                 success:function (res){
@@ -182,13 +175,12 @@
         $(document).ready(function (){
             $(".szinesben-rating-stars").click(handleRating2);
         });
-    </script>
-    <script>
+
         function handleRating3(event){
             var classes = event.target.parentNode.className.split(" ");
             var number = classes[1].split("-")[2];
             jQuery.ajax({
-                url:"../Ajax/ratings.php",
+                url:"ratings.php",
                 type:"post",
                 data: {name:"filmcim", num:number},
                 success:function (res){
