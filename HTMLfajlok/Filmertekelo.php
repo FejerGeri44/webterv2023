@@ -12,7 +12,7 @@
     <ul>
         <li><a href="Quiz.php">Quiz</a></li>
         <li><a class="active" href="#">Filmek</a></li>
-        <li><a href="Chat.php">Chat</a></li>
+        <li><a href="Modositas.php">Chat</a></li>
     </ul>
 </div>
 <div class="container"><br>
@@ -86,11 +86,6 @@
         <input type="submit" value="Vissza a profilra">
     </div>
     <script>
-        function myFunction() {
-            let person = prompt("Please enter your email:", "");
-        }
-        myFunction();
-
 
         function handleRating1(event){
             var classes = event.target.parentNode.className.split(" ");

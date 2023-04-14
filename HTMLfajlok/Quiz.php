@@ -11,7 +11,7 @@
     <ul>
         <li><a class="active" href="../HTMLfajlok/Quiz.php">Quiz</a></li>
         <li><a href="../HTMLfajlok/Filmertekelo.php">Filmek</a></li>
-        <li><a href="../HTMLfajlok/Chat.php">Chat</a></li>
+        <li><a href="../HTMLfajlok/Modositas.php">Chat</a></li>
     </ul>
 </div>
 <div class="container"><br>
