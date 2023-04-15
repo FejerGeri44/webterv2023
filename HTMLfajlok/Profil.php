@@ -33,36 +33,86 @@
 </div>
 <hr><br><br><br>
 
-<div class="kep">
-    <img id="myImage" src="../Képek/avatar.jpg" alt="profilkep">
-    <br><br>
-    <input id="fileBtn" type="file" onchange="changeImage(event)">
-</div>
-
 <?php
+
 $users = file('Felhasznalok.txt');
 
 usort($users, function($a, $b) {
     $a = explode(',', $a);
     $b = explode(',', $b);
-    return $b[10] - $a[10];
+    return $b[6] - $a[6];
 });
 $topharom = array_slice($users, 0, 3);
+if (count($users) >= 3) {
+    echo '<table>';
+    echo '<tr><th colspan="3" class="rankingtitle">Quiz ranglétra</th></tr>';
+    echo '<tr><th>Ranking</th><th>Felhasználónév</th><th>Legutóbbi pontszám</th></tr>';
+    $i = 1;
+    foreach ($topharom as $user) {
+        $user = explode(',', $user);
+        $class = '';
+        switch ($i) {
+            case 1:
+                $class = 'elso';
+                break;
+            case 2:
+                $class = 'masodik';
+                break;
+            case 3:
+                $class = 'harmadik';
+                break;
+        }
+        echo '<tr><td class="rank"><span class="' . $class . '">Top ' . $i . '</span></td><td>' . $user[1] . '</td><td>' . $user[6] . '</td></tr>';
+        $i++;
+    }
+    echo '</table>';
+}else{
+    echo "<h2>Üzenet:</h2>";
+    echo "<p>Amíg nincs regisztrálva legalább 3 felhasználó, addig a Quiz Ranglista megtekintése nem lehetséges!</p>";
+}
+?>
 
-echo '<table>';
-echo '<tr><th colspan="3" class="rankingtitle">Quiz ranglétra</th></tr>';
-echo '<tr><th>Ranking</th><th>Felhasználónév</th><th>Legutóbbi pontszám</th></tr>';
-foreach ($topharom as $user) {
-    $user = explode(',', $user);
-    echo '<tr><td class="rank"><span class="elso">Top 1</span></td><td>'.$user[1].'</td><td>'.$user[10].'</td></tr>';
+<form method="post" action="Profil.php">
+    <div>
+    <label for="email">Email cím:</label>
+    </div>
+    <div>
+    <input type="text" name="email" id="email" required>
+    </div>
+    <div>
+    <button type="submit" name="delete">Fiók törlése</button>
+    </div>
+</form>
+
+<?php
+
+if (isset($_POST['delete'])) {
+
+    $email = $_POST["email"];
+    $file = fopen("Felhasznalok.txt", "r");
+    $ujfajl = "";
+    $letezik = false;
+
+    while ($line = fgets($file)) {
+        $row = explode(",", $line);
+        if ($row[2] == $email) {
+            $letezik = true;
+        } else {
+            $ujfajl .= $line;
+        }
+    }
+    fclose($file);
+
+    $file = fopen("Felhasznalok.txt", "w");
+    fwrite($file, $ujfajl);
+    fclose($file);
+
+    if ($letezik) {
+        header("Location: Regisztracio.php");
+    } else {
+        echo "<p>Ezzel az email címmel nem található felhasználó.</p>";
+    }
 }
-if (count($users) == 1) {
-    echo '<tr><td class="rank"><span class="masodik">Top 2</span></td><td colspan="2">nincs több felhasználó</td></tr>';
-    echo '<tr><td class="rank"><span class="harmadik">Top 3</span></td><td colspan="2">nincs több felhasználó</td></tr>';
-} elseif (count($users) == 2) {
-    echo '<tr><td colspan="2">nincs több felhasználó</td></tr>';
-}
-echo '</table>';
 ?>
 
 <form action="Bejelentkezes.php" method="post">
@@ -71,57 +121,6 @@ echo '</table>';
     </div>
 </form>
 <script>
-    function changeImage(event) {
-        let file = event.target.files[0];
-        let filename = file.name;
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function() {
-            let image = document.getElementById("myImage");
-            image.src = reader.result;
-            updateProfilePicture(filename);
-        }
-    }
-
-    function updateProfilePicture(filename) {
-        let users = [];
-        let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-                users = JSON.parse(this.responseText);
-                let currentUser = getCurrentUser(users);
-                if (currentUser != null) {
-                    currentUser.avatar = filename;
-                    writeToFile(users);
-                }
-            }
-        };
-        xhttp.open("GET", "Felhasznalok.txt", true);
-        xhttp.send();
-    }
-
-    function getCurrentUser(users) {
-        let currentUser = null;
-        let loggedInUser = localStorage.getItem("loggedInUser");
-        users.forEach(function(user) {
-            if (user.username === loggedInUser) {
-                currentUser = user;
-            }
-        });
-        return currentUser;
-    }
-
-    function writeToFile(users) {
-        let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-                console.log("File updated");
-            }
-        };
-        xhttp.open("POST", "updateFile.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("data=" + JSON.stringify(users));
-    }
     function setCookie(cname, cvalue, exdays) {
         const d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));

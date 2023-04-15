@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
     foreach ($lines as $line) {
         $user = explode(',', $line);
         if ($user[2] == $email) {
-            $user[10] = $pontszam;
+            $user[6] = $pontszam;
             $line = implode(',', $user);
         }
         $frissitettline .= $line;

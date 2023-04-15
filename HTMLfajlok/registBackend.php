@@ -13,9 +13,6 @@ if (isset($_POST["regisztracio"])) {
     $password = $_POST["password"];
     $passwordagain = $_POST["passwordagain"];
     $gender = NULL;
-    $film1 = 0;
-    $film2 = 0;
-    $film3 = 0;
     $quizdefault = 0;
 
     if (!isset($_POST["name"]) || trim($_POST["name"]) === "")
@@ -63,7 +60,7 @@ if (isset($_POST["regisztracio"])) {
 
     if (count($bakik) === 0) {
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender, "avatar" => "avatar.jpg", "film1" => $film1, "film2" => $film2, "film3" => $film3, "quizpontszam" => $quizdefault];
+        $users[] = ["name" => $name, "username" => $username, "email" => $email, "number" => $number, "password" => $password, "gender" => $gender, "quizpontszam" => $quizdefault];
         saveUsers("Felhasznalok.txt", $users);
         $successful = TRUE;
         header("Location: Bejelentkezes.php");

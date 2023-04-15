@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $password = password_hash($password, PASSWORD_DEFAULT);
                 $user[4] = $password;
             }
-            $new_line = implode(",", $user) . "\n";
+            $new_line = implode(",", $user);
             array_push($new_lines, $new_line);
         } else {
             array_push($new_lines, $line);
