@@ -57,6 +57,41 @@ body {
     justify-content: center;
     text-align: center;
 }
+table{
+    margin: auto;
+    text-align: center;
+    border: 8px groove darkred;
+}
+tr{
+    height: 60px;
+}
+td{
+    font-size: 22px;
+    color: black;
+    border: 3px groove darkgray;
+    background: #cccccc;
+}
+th{
+    font-family: 'sans-serif';
+    font-size: 20px;
+    background: #575757;
+    width: 170px;
+    border: 3px double #3d3d3d;
+}
+.elso{
+    color: gold;
+}
+.masodik{
+    color: silver;
+}
+.harmadik{
+    color: #CD7F32;
+}
+.rank{
+    font-size: 25px;
+    background: #3d3d3d;
+    text-align: center;
+}
 .navbarka {
     background-color: #333;
     padding: 10px;

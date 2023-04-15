@@ -39,6 +39,32 @@
     <input id="fileBtn" type="file" onchange="changeImage(event)">
 </div>
 
+<?php
+$users = file('Felhasznalok.txt');
+
+usort($users, function($a, $b) {
+    $a = explode(',', $a);
+    $b = explode(',', $b);
+    return $b[10] - $a[10];
+});
+$topharom = array_slice($users, 0, 3);
+
+echo '<table>';
+echo '<tr><th colspan="3" class="rankingtitle">Quiz ranglétra</th></tr>';
+echo '<tr><th>Ranking</th><th>Felhasználónév</th><th>Legutóbbi pontszám</th></tr>';
+foreach ($topharom as $user) {
+    $user = explode(',', $user);
+    echo '<tr><td class="rank"><span class="elso">Top 1</span></td><td>'.$user[1].'</td><td>'.$user[10].'</td></tr>';
+}
+if (count($users) == 1) {
+    echo '<tr><td class="rank"><span class="masodik">Top 2</span></td><td colspan="2">nincs több felhasználó</td></tr>';
+    echo '<tr><td class="rank"><span class="harmadik">Top 3</span></td><td colspan="2">nincs több felhasználó</td></tr>';
+} elseif (count($users) == 2) {
+    echo '<tr><td colspan="2">nincs több felhasználó</td></tr>';
+}
+echo '</table>';
+?>
+
 <form action="Bejelentkezes.php" method="post">
     <div class="button">
         <input class="gomb" type="submit" value="Kijelentkezés">

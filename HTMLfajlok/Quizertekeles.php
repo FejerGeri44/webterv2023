@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
         }
     }
     if (isset($_POST["harmadik"])){
-        if ($harmadikfeladat == "C") {
+        if ($harmadikfeladat == "A") {
             $pontszam++;
         }else{
             $pontszam--;

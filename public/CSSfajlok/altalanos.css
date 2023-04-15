@@ -75,10 +75,7 @@
 }
 .ablak{
     display: flex;
-    justify-content: center;
-    margin: 20px 39% 30px 39%;
-    position: relative;
-    text-align: left;
+    margin: auto;
     max-width: 350px;
     width: 100%;
     background: #333;
