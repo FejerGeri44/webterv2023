@@ -100,7 +100,6 @@ form {
 label, input {
     display: flex;
 }
-
 input[type=text]{
     font-size: 18px;
     font-family: sans-serif;

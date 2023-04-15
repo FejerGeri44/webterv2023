@@ -71,19 +71,32 @@ if (count($users) >= 3) {
     echo "<p>Amíg nincs regisztrálva legalább 3 felhasználó, addig a Quiz Ranglista megtekintése nem lehetséges!</p>";
 }
 ?>
-
-<form method="post" action="Profil.php">
-    <div>
-    <label for="email">Email cím:</label>
-    </div>
-    <div>
-    <input type="text" name="email" id="email" required>
-    </div>
-    <div>
-    <button type="submit" name="delete">Fiók törlése</button>
-    </div>
-</form>
-
+<br>
+<table>
+    <form method="post" action="Profil.php">
+        <tr>
+            <th>
+                <div>
+                <label for="email">Email cím:</label>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                <input type="text" name="email" id="email" required>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                <button class="gomb" type="submit" name="delete">Fiók törlése</button>
+                </div>
+            </td>
+        </tr>
+    </form>
+</table>
 <?php
 
 if (isset($_POST['delete'])) {
