@@ -96,17 +96,25 @@ if (isset($_POST['submit'])) {
     $lines = file('Felhasznalok.txt');
     $frissitettline = '';
 
-    foreach ($lines as $line) {
+    foreach ($lines as $key => $line) {
         $user = explode(',', $line);
         if ($user[2] == $email) {
             $user[6] = $pontszam;
             $line = implode(',', $user);
+            $lines[$key] = $line;
         }
-        $frissitettline .= $line;
     }
 
+    $frissitettline = implode("\n", $lines);
     file_put_contents('Felhasznalok.txt', $frissitettline);
 
 }
 echo "Az elért pontszámod: " . $pontszam;
+$file = "Felhasznalok.txt";
+$content = file_get_contents($file);
+
+if (strpos($content, "\n\n") !== false) {
+    $content = str_replace("\n\n", "\n", $content);
+    file_put_contents($file, $content);
+}
 echo "<form action='Profil.php' method='post'><input type='submit' value='Vissza a Profilhoz'></form>";
