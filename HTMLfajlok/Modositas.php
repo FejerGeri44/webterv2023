@@ -47,7 +47,7 @@
             </div>
 
             <div class="input">
-                <label><span class="adat">Jelszó</span></label>
+                <label ><span class="adat">Jelszó</span></label>
                 <label for="password"></label><input class="megadottAdat" type="password" id="password" name="password" placeholder="Új jelszó">
             </div>
         </div>

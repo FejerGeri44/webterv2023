@@ -1,9 +1,6 @@
 .hatter {
-    position: relative;
     background-color: #1D1F20 ;
     color: white ;
-    justify-content: center;
-    align-items: center;
 }
 .title{
     font-family: 'sans-serif';
@@ -68,13 +65,13 @@
     font-family: sans-serif;
     background-color: #000000;
     color: #e50e1e;
+    margin-top: 20px;
 }
 .tajekoztato{
     vertical-align: top;
     width: 33%;
 }
 .ablak{
-    display: flex;
     margin: auto;
     max-width: 350px;
     width: 100%;
@@ -89,9 +86,7 @@
     font-size: 15px;
     font-family: sans-serif;
 }
-.adat{
-    font-weight: revert;
-}
+
 form {
     margin: 0 auto;
     width: fit-content;
@@ -108,5 +103,29 @@ label, input {
 
 label {
     margin-bottom: 5px;
+}
+input[type=text]{
+    font-size: 18px;
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+}
+input[type=tel]{
+    font-size: 18px;
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+}
+input[type=password]{
+    font-size: 18px;
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+}
+input[type=email]{
+    font-size: 18px;
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
 }
 
