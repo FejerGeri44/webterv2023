@@ -1,3 +1,1 @@
-Csille Kevin,Dreager,csillek99@gmail.com,06306301478,$2y$10$uh28wx7tOXdvcprfNJvPDes.nz2YprNhhQznBDtPblT/jufno74.S,f,2
-Kevin Csille,Csillekevin,csillek9@gmail.com,06306301477,$2y$10$cP.bvt8j4Vw7mXQe06nsFuWKZJhJ4IfoDKR0PNCEQ20hzAVISrj9e,f,0
-valami,áhhhh,csillek909@gmail.com,06306301479,$2y$10$qtCjUrVLe60/QdyLTEvmo.TMvmawkRZ2LTEWxWlCCzCYD9HFg/Ip6,f,0
+Fejér Gergő,FejerGergo,fejer.gergo44@gmail.com,0636948655,$2y$10$NstZPyoXY/VHZ2apJAjdGupnBK6eXFbThRVZMnGbY6a82R8YiNSle,f,0,admin

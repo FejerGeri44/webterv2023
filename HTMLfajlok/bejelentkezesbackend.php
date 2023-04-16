@@ -17,11 +17,13 @@ if (isset($_POST["bejelentkezes"])) {
         $password = $_POST["password"];
 
         foreach ($users as $user) {
-            if ($user["username"] === $username && password_verify($password, $user["password"])) {
+            if ($user["username"] === $username && password_verify($password, $user["password"]) && $user["jogosultsag"] === "user") {
                 header("Location: Profil.php");
+            }elseif ($user["username"] === $username && password_verify($password, $user["password"]) && $user["jogosultsag"] === "admin") {
+                header("Location: Adminprofil.php");
             }
+            $bakik[] = "Hibás felhasználónév vagy jelszó!";
         }
-        $bakik[] = "Hibás felhasználónév vagy jelszó!";
     }
     if (count($bakik) > 0) {
         echo "<ul>";

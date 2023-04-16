@@ -72,26 +72,26 @@ if (count($users) >= 3) {
 }
 ?>
 <br>
-    <form method="post" action="Profil.php">
-        <table>
+<form method="post" action="Profil.php">
+    <table>
         <tr>
             <th>
                 <div>
-                <label for="email">Email cím:</label>
+                    <label for="email">Email cím:</label>
                 </div>
             </th>
         </tr>
         <tr>
             <td>
                 <div>
-                <input type="text" name="email" id="email" required>
+                    <input type="text" name="email" id="email" required>
                 </div>
             </td>
         </tr>
         <tr>
             <td>
                 <div>
-                <button class="gomb" type="submit" name="delete">Fiók törlése</button>
+                    <button class="gomb" type="submit" name="delete">Fiók törlése</button>
                 </div>
             </td>
         </tr>
@@ -105,13 +105,14 @@ if (isset($_POST['delete'])) {
     $file = fopen("Felhasznalok.txt", "r");
     $ujfajl = "";
     $letezik = false;
+    $admine = false;
 
-    while ($line = fgets($file)) {
-        $row = explode(",", $line);
-        if ($row[2] == $email) {
+    while ($sor = fgets($file)) {
+        $user = explode(",", $sor);
+        if ($user[2] == $email) {
             $letezik = true;
         } else {
-            $ujfajl .= $line;
+            $ujfajl .= $sor;
         }
     }
     fclose($file);
@@ -121,10 +122,37 @@ if (isset($_POST['delete'])) {
     fclose($file);
 
     if ($letezik) {
-        header("Location: Regisztracio.php");
+        header("Location: Adminprofil.php");
     } else {
         echo "<p>Ezzel az email címmel nem található felhasználó.</p>";
     }
+}
+?>
+
+<?php
+
+$file = fopen("Felhasznalok.txt", "r");
+if ($file) {
+
+    echo "<p>Az Admin jogosultság miatt láthatod a felhasználók listáját és ha szeretnéd ki is törölheted őket az adatbázisból.</p>";
+    echo "<table>";
+    echo "<tr><th>Név</th><th>Felhasználónév</th><th>Email cím</th><th>Telefonszám</th><th>Nem</th></tr>";
+    while (($data = fgets($file)) !== false) {
+
+        $user = explode(",", $data);
+        echo "<tr>";
+        echo "<td>".$user[0]."</td>";
+        echo "<td>".$user[1]."</td>";
+        echo "<td>".$user[2]."</td>";
+        echo "<td>".$user[3]."</td>";
+        echo "<td>".$user[5]."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+    fclose($file);
+
+} else {
+    echo "Hiba a fájl megnyitásakor!";
 }
 ?>
 
